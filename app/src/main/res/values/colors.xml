@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Group Chat -->
+    <color name="btn_send">#774df2</color>
+    <color name="btn_send_disabled">#8e8e8e</color>
+    <color name="colorButton">#774df2</color>
+    <color name="groupChatBubbleMe">#774df2</color>
+    <color name="groupChatTextMe">#ffffff</color>
+    <color name="groupChatBubbleOther">#eef1f6</color>
+    <color name="groupChatTextOther">#000000</color>
 </resources>
