@@ -20,21 +20,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
 
 /**
- * Created by kubek on 10/4/18.
+ * Created by kubek on 11/04/18.
  */
 
 /**
@@ -42,44 +41,60 @@ import java.util.List;
  */
 public class ChatActivity extends AppCompatActivity {
 
-    private Button addMesage;
+    private FirebaseListAdapter<ChatMessage> mAdapter;
 
-    ArrayList<String> messages=new ArrayList<>();
-    //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
-    ArrayAdapter<String> adapter;
-
+    private Button mFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        addMesage = findViewById(R.id.fab);
+        mFab = findViewById(R.id.submit_message);
 
-        addMesage.setOnClickListener(new View.OnClickListener() {
+
+        mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText input = findViewById(R.id.input);
-                messages.add(input.getText().toString());
+                EditText input = findViewById(R.id.input_message);
+                FirebaseDatabase.getInstance().getReference().child("messages").push()
+                        .setValue(new ChatMessage(input.getText().toString(),
+                                "device user"));
                 input.setText("");
-                displayChatMessage();
             }
         });
 
-    }
+        //check if not sign in then navidate to sign in
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(ChatActivity.this, "no user", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(ChatActivity.this, "welcome " + FirebaseAuth.getInstance()
+                    .getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
+            displayChatMessage();
+        }
 
+    }
 
     /**
      * Show chat message in ListView
      */
     private void displayChatMessage() {
-        if(messages.size() != 0) {
-            ListView listOfMessages = findViewById(R.id.list_of_messages);
-            adapter = new ArrayAdapter<>(this,
-                    R.layout.chat_message_me,
-                    messages);
-            listOfMessages.setAdapter(adapter);
-        }
+        ListView listOfMessages = findViewById(R.id.messages_list);
+
+        mAdapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class, R.layout.send_message,
+                FirebaseDatabase.getInstance().getReference().child("messages")) {
+            @Override
+            protected void populateView(View v, ChatMessage model, int position) {
+                //get reference to to the value og list_item.xml
+                TextView messageText, messageTime;
+                messageText = v.findViewById(R.id.send_message_body);
+                messageTime = v.findViewById(R.id.send_message_time);
+
+                messageText.setText(model.getmMessageText());
+                messageTime.setText(DateFormat.format("HH:mm", model.getmMessageTime()));
+            }
+        };
+        listOfMessages.setAdapter(mAdapter);
     }
 
     @Override
