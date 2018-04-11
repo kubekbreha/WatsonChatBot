@@ -76,7 +76,7 @@ public class ChatActivity extends AppCompatActivity {
         if(messages.size() != 0) {
             ListView listOfMessages = findViewById(R.id.list_of_messages);
             adapter = new ArrayAdapter<>(this,
-                    android.R.layout.simple_list_item_1,
+                    R.layout.chat_message_me,
                     messages);
             listOfMessages.setAdapter(adapter);
         }
