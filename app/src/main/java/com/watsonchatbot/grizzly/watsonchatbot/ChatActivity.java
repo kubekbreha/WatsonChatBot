@@ -24,13 +24,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Objects;
 
 /**
  * Created by kubek on 11/04/18.
@@ -64,14 +61,8 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        //check if not sign in then navidate to sign in
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Toast.makeText(ChatActivity.this, "no user", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(ChatActivity.this, "welcome " + FirebaseAuth.getInstance()
-                    .getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
-            displayChatMessage();
-        }
+        displayChatMessage();
+
 
     }
 
@@ -89,6 +80,7 @@ public class ChatActivity extends AppCompatActivity {
                 TextView messageText, messageTime;
                 messageText = v.findViewById(R.id.send_message_body);
                 messageTime = v.findViewById(R.id.send_message_time);
+
 
                 messageText.setText(model.getmMessageText());
                 messageTime.setText(DateFormat.format("HH:mm", model.getmMessageTime()));
