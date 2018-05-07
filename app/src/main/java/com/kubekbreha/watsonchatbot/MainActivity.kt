@@ -2,27 +2,68 @@ package com.kubekbreha.watsonchatbot
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
+
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import android.view.MenuItem
+import android.widget.FrameLayout
+import com.kubekbreha.watsonchatbot.fragments.PeoplesFragment
+import com.kubekbreha.watsonchatbot.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
+
+
+    private var content: FrameLayout? = null
+
+    private val mOnNavigationItemSelectedListener = object : BottomNavigationView.OnNavigationItemSelectedListener {
+
+        override fun onNavigationItemSelected(item: MenuItem): Boolean {
+            when (item.itemId) {
+                R.id.navigation_people -> {
+                    val fragment = PeoplesFragment.newInstance()
+                    addFragment(fragment)
+                    return true
+                }
+
+                R.id.navigation_profile -> {
+                    val fragment = ProfileFragment.newInstance()
+                    addFragment(fragment)
+                    return true
+                }
+
+            }
+            return false
+        }
+
+    }
+
+    /**
+     * add/replace fragment in container [framelayout]
+     */
+    private fun addFragment(fragment: Fragment) {
+        supportFragmentManager
+                .beginTransaction()
+                //.setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+                .replace(R.id.main_frame, fragment, fragment.javaClass.getSimpleName())
+                .addToBackStack(fragment.javaClass.getSimpleName())
+                .commit()
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation.setOnNavigationItemSelectedListener{
-            when(it.itemId){
-                R.id.navigation_people -> {
 
-                    true
-                }
-                R.id.navigation_profile -> {
+        content = findViewById(R.id.main_frame)
+        val navigation = findViewById<BottomNavigationView>(R.id.main_navigation)
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-                    true
-                }
-                else -> false
-            }
-        }
+
+        val fragment = PeoplesFragment.newInstance()
+        addFragment(fragment)
+
+
     }
 }

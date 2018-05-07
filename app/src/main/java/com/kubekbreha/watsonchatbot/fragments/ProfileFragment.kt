@@ -9,21 +9,24 @@ import android.view.ViewGroup
 
 import com.kubekbreha.watsonchatbot.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
  *
  */
-class Peoples : Fragment() {
+class ProfileFragment : Fragment() {
+
+    companion object {
+        fun newInstance() : Fragment{
+            var fb : Fragment = ProfileFragment()
+            return fb
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_peoples, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
 
