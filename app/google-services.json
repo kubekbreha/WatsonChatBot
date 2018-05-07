@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "478615355229",
+    "firebase_url": "https://watsonchatbot-d9d55.firebaseio.com",
+    "project_id": "watsonchatbot-d9d55",
+    "storage_bucket": "watsonchatbot-d9d55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478615355229:android:6cc5fe58887ece6d",
+        "android_client_info": {
+          "package_name": "com.kubekbreha.watsonchatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478615355229-3ls4sbp578opprvusi4t4sl36ffqc944.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcNB45dJ0_ci7GfcaTe3bW9xzEAQ81FXc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
