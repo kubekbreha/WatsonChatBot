@@ -1,54 +1,13 @@
 package com.kubekbreha.watsonchatbot
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
+import android.support.design.widget.TabLayout
 
 import android.support.v7.app.AppCompatActivity
-import android.view.MenuItem
-import android.widget.FrameLayout
-import com.kubekbreha.watsonchatbot.fragments.PeoplesFragment
-import com.kubekbreha.watsonchatbot.fragments.ProfileFragment
+import com.ebookfrenzy.tablayoutdemo.TabPagerAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-
-    private var content: FrameLayout? = null
-
-    private val mOnNavigationItemSelectedListener = object : BottomNavigationView.OnNavigationItemSelectedListener {
-
-        override fun onNavigationItemSelected(item: MenuItem): Boolean {
-            when (item.itemId) {
-                R.id.navigation_people -> {
-                    val fragment = PeoplesFragment.newInstance()
-                    addFragment(fragment)
-                    return true
-                }
-
-                R.id.navigation_profile -> {
-                    val fragment = ProfileFragment.newInstance()
-                    addFragment(fragment)
-                    return true
-                }
-
-            }
-            return false
-        }
-
-    }
-
-    /**
-     * add/replace fragment in container [framelayout]
-     */
-    private fun addFragment(fragment: Fragment) {
-        supportFragmentManager
-                .beginTransaction()
-                .setCustomAnimations(R.anim.left_to_right, R.anim.right_to_left)
-                .replace(R.id.main_frame, fragment, fragment.javaClass.getSimpleName())
-                .addToBackStack(fragment.javaClass.getSimpleName())
-                .commit()
-    }
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,14 +15,41 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        content = findViewById(R.id.main_frame)
-        val navigation = findViewById<BottomNavigationView>(R.id.main_navigation)
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-
-        val fragment = PeoplesFragment.newInstance()
-        addFragment(fragment)
-
+        configureTabLayout()
 
     }
+
+    private fun configureTabLayout() {
+
+        val tab_layout = findViewById<TabLayout>(R.id.tab_layout)
+
+        tab_layout.addTab(tab_layout.newTab().setText("Tab 1 Item"))
+        tab_layout.addTab(tab_layout.newTab().setText("Tab 2 Item"))
+
+
+        val adapter = TabPagerAdapter(supportFragmentManager,
+                tab_layout.tabCount)
+        pager.adapter = adapter
+
+        pager.addOnPageChangeListener(
+                TabLayout.TabLayoutOnPageChangeListener(tab_layout))
+        tab_layout.addOnTabSelectedListener(object :
+                TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                pager.currentItem = tab.position
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+
+            }
+
+        })
+    }
+
+
 }
