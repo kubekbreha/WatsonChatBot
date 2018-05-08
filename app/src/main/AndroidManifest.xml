@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".authentification.LoginActivity" />
-        <activity android:name=".authentification.RegisterActivity"></activity>
+        <activity android:name=".authentification.RegisterActivity" />
     </application>
 
 </manifest>
