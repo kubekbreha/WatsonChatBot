@@ -1,7 +1,8 @@
-package com.kubekbreha.watsonchatbot
+package com.kubekbreha.watsonchatbot.authentification
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.kubekbreha.watsonchatbot.R
 
 
 class LoginActivity : AppCompatActivity() {
