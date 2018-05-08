@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun addFragment(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
-                //.setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+                .setCustomAnimations(R.anim.left_to_right, R.anim.right_to_left)
                 .replace(R.id.main_frame, fragment, fragment.javaClass.getSimpleName())
                 .addToBackStack(fragment.javaClass.getSimpleName())
                 .commit()
