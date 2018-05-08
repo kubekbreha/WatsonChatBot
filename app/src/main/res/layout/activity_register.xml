@@ -41,7 +41,7 @@
         android:id="@+id/btn_register"
         style="@style/viewCustom"
         android:layout_below="@id/et_password"
-        android:background="@color/colorBlack"
+        android:background="@color/colorPrimary"
         android:text="@string/create_act"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
