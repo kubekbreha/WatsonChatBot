@@ -14,6 +14,9 @@
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
+        android:textColorLink="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:shadowColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite" />
 
     <EditText
@@ -23,13 +26,16 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:textColorLink="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:shadowColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite" />
 
     <Button
         android:id="@+id/btn_login"
         style="@style/viewCustom"
         android:layout_below="@id/et_password"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button_rounded"
         android:text="@string/login_title"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
@@ -39,17 +45,19 @@
         style="@style/viewCustom"
         android:layout_below="@id/btn_login"
         android:clickable="true"
+        android:layout_marginTop="0dp"
         android:gravity="center_horizontal"
         android:text="Forgot Password?"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/btn_register_account"
         style="@style/viewCustom"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
         android:text="@string/create_act"
+        android:background="@drawable/button_rounded"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
