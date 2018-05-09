@@ -24,8 +24,8 @@
     <EditText
         android:id="@+id/et_email"
         style="@style/viewCustom"
-        android:ems="10"
         android:layout_below="@id/et_last_name"
+        android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress" />
 

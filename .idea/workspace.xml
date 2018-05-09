@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d83a5b8d-5f82-4dbb-b281-975ec762a38d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/CheckActivity.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_check.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
@@ -17,9 +17,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/LoginActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/LoginActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,23 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/MainActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-              <folding>
-                <element signature="e#38#265#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginActivity.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginActivity.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/LoginActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="1020">
+              <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -66,102 +57,118 @@
       </file>
       <file leaf-file-name="activity_forgot_password.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+              <folding>
+                <element signature="e#494#509#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForgotPasswordActivity.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ForgotPasswordActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="-159">
+              <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding>
-                <element signature="e#55#165#0" expanded="true" />
+                <element signature="e#55#407#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterActivity.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/RegisterActivity.kt">
+      <file leaf-file-name="activity_check.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_check.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
-              <folding>
-                <element signature="e#55#597#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+            <state relative-caret-position="62">
+              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-manifest">
+          <provider editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="CheckActivity.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/CheckActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#55#304#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-              <folding>
-                <element signature="e#486#501#0" expanded="true" />
-                <element signature="e#727#745#0" expanded="true" />
-                <element signature="e#990#1011#0" expanded="true" />
-                <element signature="e#1600#1620#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_register.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
               <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <file leaf-file-name="fragment_peoples.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            <state relative-caret-position="210">
+              <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_profile.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2175,9 +2182,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/anim/left_to_right.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/TabPagerAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
@@ -2185,9 +2189,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/RegisterActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/LoginActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_check.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/CheckActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt" />
       </list>
     </option>
   </component>
@@ -2211,6 +2221,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2227,7 +2240,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2255,14 +2267,23 @@
             </path>
             <path>
               <item name="WatsonChatBot" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="WatsonChatBot" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="WatsonChatBot" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2452,13 +2473,13 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17604913" sideWeight="0.502442" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17604913" sideWeight="0.504884" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2468,8 +2489,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17604913" sideWeight="0.497558" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17604913" sideWeight="0.495116" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -2483,6 +2503,7 @@
       <window_info id="Assistant" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2503,11 +2524,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="81" column="43" lean-forward="false" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#494#509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#55#407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/RegisterActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
+          <folding>
+            <element signature="e#55#597#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/fragments/PeoplesFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2515,7 +2632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2538,7 +2654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2546,26 +2661,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/right_to_left.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/left_to_right.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/right_to_left.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/left_to_right.xml" />
     <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/e9ff700f39aae049b73d9899f80f5a6a/res/values/values.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5835">
@@ -2585,14 +2685,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation_menu.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
@@ -2603,49 +2702,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding>
-            <element signature="e#1100#1140#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/RegisterActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/RegisterActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -2664,63 +2721,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
+        <state relative-caret-position="615">
           <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <element signature="e#486#501#0" expanded="true" />
-            <element signature="e#727#745#0" expanded="true" />
-            <element signature="e#990#1011#0" expanded="true" />
-            <element signature="e#1600#1620#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/RegisterActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="1260">
           <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
           <folding>
-            <element signature="e#55#597#0" expanded="true" />
+            <element signature="e#55#597#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="488">
           <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding>
             <element signature="e#38#265#0" expanded="true" />
@@ -2729,31 +2759,109 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <element signature="e#494#509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_check.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/CheckActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#55#165#0" expanded="true" />
+            <element signature="e#55#304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/LoginActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        <state relative-caret-position="1020">
+          <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentification/ForgotPasswordActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-159">
+          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#55#407#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
