@@ -66,6 +66,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     }
 
 
+
     private fun updateUI() {
         val intent = Intent(this@ForgotPasswordActivity, LoginActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

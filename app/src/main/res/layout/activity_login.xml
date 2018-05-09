@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".authentification.LoginActivity">
 
 
@@ -12,7 +13,8 @@
         style="@style/viewCustom"
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/colorWhite" />
 
     <EditText
         android:id="@+id/et_password"
@@ -20,7 +22,8 @@
         android:layout_below="@id/et_email"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorWhite" />
 
     <Button
         android:id="@+id/btn_login"
@@ -38,6 +41,7 @@
         android:clickable="true"
         android:gravity="center_horizontal"
         android:text="Forgot Password?"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
     <Button
