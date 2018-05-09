@@ -8,5 +8,9 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
 
+    <color name="loginBackground">#2F7074</color>
+    <color name="registerBackground">#F9FAFC</color>
 
+
+    F9FAFC
 </resources>

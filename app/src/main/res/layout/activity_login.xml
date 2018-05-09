@@ -57,7 +57,7 @@
         style="@style/viewCustom"
         android:layout_alignParentBottom="true"
         android:text="@string/create_act"
-        android:background="@drawable/button_rounded"
+        android:background="@drawable/button_rounded_basic"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
