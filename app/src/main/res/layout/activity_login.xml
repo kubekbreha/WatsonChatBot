@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/loginBackground"
     tools:context=".authentification.LoginActivity">
 
 
@@ -14,10 +14,10 @@
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textColorLink="@color/colorWhite"
-        android:textColor="@color/colorWhite"
         android:shadowColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite" />
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textColorLink="@color/colorWhite" />
 
     <EditText
         android:id="@+id/et_password"
@@ -26,40 +26,63 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:textColorLink="@color/colorWhite"
-        android:textColor="@color/colorWhite"
         android:shadowColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite" />
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textColorLink="@color/colorWhite" />
 
-    <Button
-        android:id="@+id/btn_login"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_password"
-        android:background="@drawable/button_rounded"
-        android:text="@string/login_title"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/login_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/button_rounded"
+            android:elevation="0dp"
+            android:minWidth="120dp"
+            android:clickable="true"
+            android:text="Sign Up"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_register_account"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/button_rounded"
+            android:elevation="0dp"
+            android:minWidth="120dp"
+            android:text="Sign In"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/tv_forgot_password"
-        style="@style/viewCustom"
-        android:layout_below="@id/btn_login"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
         android:clickable="true"
-        android:layout_marginTop="0dp"
-        android:gravity="center_horizontal"
+        android:focusable="true"
         android:text="Forgot Password?"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        android:focusable="true" />
-
-    <Button
-        android:id="@+id/btn_register_account"
-        style="@style/viewCustom"
-        android:layout_alignParentBottom="true"
-        android:text="@string/create_act"
-        android:background="@drawable/button_rounded_basic"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
 
 
 </RelativeLayout>

@@ -10,7 +10,8 @@
 
     <color name="loginBackground">#2F7074</color>
     <color name="registerBackground">#F9FAFC</color>
+    <color name="loginButton">#EE1F25</color>
 
 
-    F9FAFC
+
 </resources>
