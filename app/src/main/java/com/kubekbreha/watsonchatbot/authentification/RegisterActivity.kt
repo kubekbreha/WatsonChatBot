@@ -21,14 +21,12 @@ class RegisterActivity : AppCompatActivity() {
     private val TAG = "RegisterActivity"
 
     //global variables
-    private var firstName: String? = null
-    private var lastName: String? = null
+    private var userName: String? = null
     private var email: String? = null
     private var password: String? = null
 
     //UI elements
-    private var etFirstName: EditText? = null
-    private var etLastName: EditText? = null
+    private var etUsername: EditText? = null
     private var etEmail: EditText? = null
     private var etPassword: EditText? = null
     private var btnCreateAccount: Button? = null
@@ -48,8 +46,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun initialise() {
-        etFirstName = findViewById<View>(R.id.et_first_name) as EditText
-        etLastName = findViewById<View>(R.id.et_last_name) as EditText
+        etUsername = findViewById<View>(R.id.et_username) as EditText
         etEmail = findViewById<View>(R.id.et_email) as EditText
         etPassword = findViewById<View>(R.id.et_password) as EditText
         btnCreateAccount = findViewById<View>(R.id.btn_register) as Button
@@ -64,12 +61,11 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun createNewAccount() {
 
-        firstName = etFirstName?.text.toString()
-        lastName = etLastName?.text.toString()
+        userName = etUsername?.text.toString()
         email = etEmail?.text.toString()
         password = etPassword?.text.toString()
 
-        if (!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName)
+        if (!TextUtils.isEmpty(userName)
                 && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
 
             mProgressBar!!.setMessage("Registering User...")
@@ -88,8 +84,7 @@ class RegisterActivity : AppCompatActivity() {
                             verifyEmail();
                             //update user profile information
                             val currentUserDb = mDatabaseReference!!.child(userId)
-                            currentUserDb.child("firstName").setValue(firstName)
-                            currentUserDb.child("lastName").setValue(lastName)
+                            currentUserDb.child("userName").setValue(userName)
                             updateUserInfoAndUI()
                         } else {
                             // If sign in fails, display a message to the user.

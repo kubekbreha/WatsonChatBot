@@ -16,9 +16,8 @@ class CheckActivity : AppCompatActivity() {
     private var mDatabase: FirebaseDatabase? = null
     private var mAuth: FirebaseAuth? = null
 
-    //UI elements
-    private var tvFirstName: TextView? = null
-    private var tvLastName: TextView? = null
+    //UI element
+    private var tvUserName: TextView? = null
     private var tvEmail: TextView? = null
     private var tvEmailVerifiied: TextView? = null
 
@@ -35,8 +34,8 @@ class CheckActivity : AppCompatActivity() {
         mDatabaseReference = mDatabase!!.reference!!.child("Users")
         mAuth = FirebaseAuth.getInstance()
 
-        tvFirstName = findViewById<View>(R.id.tv_first_name) as TextView
-        tvLastName = findViewById<View>(R.id.tv_last_name) as TextView
+        tvUserName = findViewById<View>(R.id.tv_username) as TextView
+
         tvEmail = findViewById<View>(R.id.tv_email) as TextView
         tvEmailVerifiied = findViewById<View>(R.id.tv_email_verifiied) as TextView
     }
@@ -50,8 +49,8 @@ class CheckActivity : AppCompatActivity() {
         tvEmailVerifiied!!.text = mUser.isEmailVerified.toString()
         mUserReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                tvFirstName!!.text = snapshot.child("firstName").value as String
-                tvLastName!!.text = snapshot.child("lastName").value as String
+                tvUserName!!.text = snapshot.child("userName").value as String
+
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
