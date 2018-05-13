@@ -12,6 +12,7 @@
     <color name="registerBackground">#F9FAFC</color>
     <color name="loginButton">#EE1F25</color>
 
-
+    <color name="facebook">#2A5396</color>
+    <color name="google">#DC4E42</color>
 
 </resources>
