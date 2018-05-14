@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.kubekbreha.watsonchatbot.R
@@ -23,6 +24,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     //UI elements
     private var etEmail: EditText? = null
     private var btnSubmit: Button? = null
+    private var btnBack: ImageButton? = null
 
     //Firebase references
     private var mAuth: FirebaseAuth? = null
@@ -39,8 +41,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
     private fun initialise() {
         etEmail = findViewById<View>(R.id.et_email) as EditText
         btnSubmit = findViewById<View>(R.id.btn_submit) as Button
+        btnBack = findViewById<View>(R.id.btn_back_from_forgot) as ImageButton
         mAuth = FirebaseAuth.getInstance()
         btnSubmit!!.setOnClickListener { sendPasswordResetEmail() }
+        btnBack!!.setOnClickListener{ finish() }
     }
 
 
