@@ -67,6 +67,14 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun initialise() {
+        mAuth = FirebaseAuth.getInstance()
+
+
+        //automaticaly log user
+        if(mAuth!!.currentUser != null){
+            updateUserInfoAndUI()
+        }
+
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.request_client_id))
                 .requestEmail()
@@ -99,7 +107,7 @@ class RegisterActivity : AppCompatActivity() {
         btnFacebook!!.setOnClickListener{   Toast.makeText(this@RegisterActivity, "Not implemented yet.",
                 Toast.LENGTH_SHORT).show()    }
 
-        mAuth = FirebaseAuth.getInstance()
+
     }
 
 
@@ -108,7 +116,7 @@ class RegisterActivity : AppCompatActivity() {
         userName = etUsername?.text.toString()
         email = etEmail?.text.toString()
         password = etPassword?.text.toString()
-        
+
 
         if (!TextUtils.isEmpty(userName)
                 && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
