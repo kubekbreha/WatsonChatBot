@@ -45,7 +45,10 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:3.3.1'
     implementation 'com.google.firebase:firebase-storage:15.0.2'
     implementation 'com.firebaseui:firebase-ui-storage:3.3.1'
-    implementation 'com.google.android.gms:play-services-auth:15.0.1'\
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+
+    //google login
+    implementation 'com.google.android.gms:play-services-auth:11.0.4'
 
     //vaves
     implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
