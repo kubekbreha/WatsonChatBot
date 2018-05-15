@@ -40,6 +40,7 @@ class RegisterActivity : AppCompatActivity() {
     private var mProgressBar: ProgressDialog? = null
     private var btnBack: ImageButton? = null
     private var btnGoogle: Button? = null
+    private var btnFacebook: Button? = null
 
     //Firebase references
     private var mDatabaseReference: DatabaseReference? = null
@@ -83,6 +84,7 @@ class RegisterActivity : AppCompatActivity() {
         btnCreateAccount = findViewById<View>(R.id.btn_register) as Button
         btnBack = findViewById<View>(R.id.btn_back_from_register) as ImageButton
         btnGoogle = findViewById<View>(R.id.register_button_google) as Button
+        btnFacebook = findViewById<View>(R.id.register_button_facebook) as Button
 
         mProgressBar = ProgressDialog(this)
         mDatabase = FirebaseDatabase.getInstance()
@@ -94,6 +96,9 @@ class RegisterActivity : AppCompatActivity() {
         //google login
         btnGoogle!!.setOnClickListener { googleButtonOnClick() }
 
+        btnFacebook!!.setOnClickListener{   Toast.makeText(this@RegisterActivity, "Not implemented yet.",
+                Toast.LENGTH_SHORT).show()    }
+
         mAuth = FirebaseAuth.getInstance()
     }
 
@@ -103,8 +108,7 @@ class RegisterActivity : AppCompatActivity() {
         userName = etUsername?.text.toString()
         email = etEmail?.text.toString()
         password = etPassword?.text.toString()
-
-
+        
 
         if (!TextUtils.isEmpty(userName)
                 && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
@@ -134,21 +138,16 @@ class RegisterActivity : AppCompatActivity() {
                         }
                     }
 
-
         } else {
             Toast.makeText(this, "Enter all details", Toast.LENGTH_SHORT).show()
         }
-
-
-
 
     }
 
 
     fun googleButtonOnClick() {
 
-        Toast.makeText(this@RegisterActivity, "Trying google login.",
-                Toast.LENGTH_SHORT).show()
+        Log.i(TAG, "Trying to login via google.")
         googleLogin()
 
     }
