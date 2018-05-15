@@ -9,5 +9,8 @@
 
     <string name="request_client_id">478615355229-3ls4sbp578opprvusi4t4sl36ffqc944.apps.googleusercontent.com</string>
 
-
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
 </resources>

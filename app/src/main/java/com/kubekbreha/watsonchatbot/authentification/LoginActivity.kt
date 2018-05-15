@@ -12,7 +12,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.kubekbreha.watsonchatbot.MainActivity
+import com.kubekbreha.watsonchatbot.main.MainActivity
 import com.kubekbreha.watsonchatbot.R
 
 
