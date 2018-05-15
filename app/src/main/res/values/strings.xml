@@ -6,4 +6,8 @@
     <string name="user_name">Username</string>
     <string name="login_title">Login</string>
     <string name="create_act">Create Account</string>
+
+    <string name="request_client_id">478615355229-3ls4sbp578opprvusi4t4sl36ffqc944.apps.googleusercontent.com</string>
+
+
 </resources>
