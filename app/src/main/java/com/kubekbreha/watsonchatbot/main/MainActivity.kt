@@ -9,9 +9,15 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import com.example.bottomnavigation.extension.active
+import com.example.bottomnavigation.extension.disableShiftMode
+import com.example.bottomnavigation.helper.BottomNavigationPosition
+import com.example.bottomnavigation.helper.createFragment
+import com.example.bottomnavigation.helper.findNavigationPositionById
+import com.example.bottomnavigation.helper.getTag
 import com.kubekbreha.watsonchatbot.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItemSelectedListener{
 
     private val KEY_POSITION = "keyPosition"
 

@@ -1,11 +1,11 @@
 package com.example.bottomnavigation.helper
 
 import android.support.v4.app.Fragment
-import com.example.bottomnavigation.R
 import com.example.bottomnavigation.ui.DashboardFragment
 import com.example.bottomnavigation.ui.HomeFragment
 import com.example.bottomnavigation.ui.NotificationsFragment
 import com.example.bottomnavigation.ui.ProfileFragment
+import com.kubekbreha.watsonchatbot.R
 
 enum class BottomNavigationPosition(val position: Int, val id: Int) {
     HOME(0, R.id.home),
