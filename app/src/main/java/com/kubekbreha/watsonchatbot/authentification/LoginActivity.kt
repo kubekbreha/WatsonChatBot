@@ -46,57 +46,57 @@ class LoginActivity : AppCompatActivity() {
         val w = window // in Activity's onCreate() for instance
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
-        initialise()
+        //initialise()
     }
 
 
-    private fun initialise() {
-        tvForgotPassword = findViewById<View>(R.id.tv_forgot_password) as TextView
-        etEmail = findViewById<View>(R.id.et_email) as EditText
-        etPassword = findViewById<View>(R.id.et_password) as EditText
-        btnLogin = findViewById<View>(R.id.btn_login) as Button
-        btnCreateAccount = findViewById<View>(R.id.btn_register_account) as Button
-        mProgressBar = ProgressDialog(this)
-        mAuth = FirebaseAuth.getInstance()
-        tvForgotPassword!!
-                .setOnClickListener {
-                    startActivity(Intent(this@LoginActivity,
-                            ForgotPasswordActivity::class.java))
-                }
-        btnCreateAccount!!
-                .setOnClickListener {
-                    startActivity(Intent(this@LoginActivity,
-                            RegisterActivity::class.java))
-                }
-        btnLogin!!.setOnClickListener { loginUser() }
-    }
+//    private fun initialise() {
+//        tvForgotPassword = findViewById<View>(R.id.tv_forgot_password) as TextView
+//        etEmail = findViewById<View>(R.id.et_email) as EditText
+//        etPassword = findViewById<View>(R.id.et_password) as EditText
+//        btnLogin = findViewById<View>(R.id.btn_login) as Button
+//        btnCreateAccount = findViewById<View>(R.id.btn_register_account) as Button
+//        mProgressBar = ProgressDialog(this)
+//        mAuth = FirebaseAuth.getInstance()
+//        tvForgotPassword!!
+//                .setOnClickListener {
+//                    startActivity(Intent(this@LoginActivity,
+//                            ForgotPasswordActivity::class.java))
+//                }
+//        btnCreateAccount!!
+//                .setOnClickListener {
+//                    startActivity(Intent(this@LoginActivity,
+//                            RegisterActivity::class.java))
+//                }
+//        btnLogin!!.setOnClickListener { loginUser() }
+//    }
 
 
-    private fun loginUser() {
-        email = etEmail?.text.toString()
-        password = etPassword?.text.toString()
-        if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
-            mProgressBar!!.setMessage("Registering User...")
-            mProgressBar!!.show()
-            Log.d(TAG, "Logging in user.")
-            mAuth!!.signInWithEmailAndPassword(email!!, password!!)
-                    .addOnCompleteListener(this) { task ->
-                        mProgressBar!!.hide()
-                        if (task.isSuccessful) {
-                            // Sign in success, update UI with signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success")
-                            updateUI()
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.e(TAG, "signInWithEmail:failure", task.exception)
-                            Toast.makeText(this@LoginActivity, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show()
-                        }
-                    }
-        } else {
-            Toast.makeText(this, "Enter all details", Toast.LENGTH_SHORT).show()
-        }
-    }
+//    private fun loginUser() {
+//        email = etEmail?.text.toString()
+//        password = etPassword?.text.toString()
+//        if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
+//            mProgressBar!!.setMessage("Registering User...")
+//            mProgressBar!!.show()
+//            Log.d(TAG, "Logging in user.")
+//            mAuth!!.signInWithEmailAndPassword(email!!, password!!)
+//                    .addOnCompleteListener(this) { task ->
+//                        mProgressBar!!.hide()
+//                        if (task.isSuccessful) {
+//                            // Sign in success, update UI with signed-in user's information
+//                            Log.d(TAG, "signInWithEmail:success")
+//                            updateUI()
+//                        } else {
+//                            // If sign in fails, display a message to the user.
+//                            Log.e(TAG, "signInWithEmail:failure", task.exception)
+//                            Toast.makeText(this@LoginActivity, "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//        } else {
+//            Toast.makeText(this, "Enter all details", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
 
     private fun updateUI() {
