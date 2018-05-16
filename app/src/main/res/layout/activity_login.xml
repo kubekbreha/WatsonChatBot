@@ -4,16 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loginBackground"
+    android:background="@color/colorPrimaryDark"
     tools:context=".authentification.LoginActivity">
 
 
+    <FrameLayout
+        android:id="@+id/activity_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/waveHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        app:mwhCloseColor="@color/colorPrimary"
+        app:mwhStartColor="@color/colorPrimary"
+        app:mwhWaves="00,5,0.6,0.5,-26
+                        230,5,0.6,0.5,-26" />
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeaderBottom"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        app:mwhCloseColor="@color/colorPrimaryDark"
-        app:mwhStartColor="@color/colorPrimaryDark" />
+        android:layout_height="240dp"
+        android:layout_alignParentBottom="true"
+        android:scaleY="-1"
+        app:mwhCloseColor="@color/colorPrimary"
+        app:mwhProgress="1"
+        app:mwhStartColor="@color/colorPrimary"
+        app:mwhVelocity="1"
+        app:mwhWaves="-420,10,0.6,0.5,20
+                        40,10,0.6,0.5,20" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/activity_tab_layout"
+        android:layout_margin="16dp"
+        android:text="Log in"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/et_email"

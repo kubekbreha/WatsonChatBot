@@ -41,10 +41,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            val w = window // in Activity's onCreate() for instance
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-        }
+
+        //show transparent activity tab
+        val w = window // in Activity's onCreate() for instance
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         initialise()
     }
@@ -59,14 +59,17 @@ class LoginActivity : AppCompatActivity() {
         mProgressBar = ProgressDialog(this)
         mAuth = FirebaseAuth.getInstance()
         tvForgotPassword!!
-                .setOnClickListener { startActivity(Intent(this@LoginActivity,
-                        ForgotPasswordActivity::class.java)) }
+                .setOnClickListener {
+                    startActivity(Intent(this@LoginActivity,
+                            ForgotPasswordActivity::class.java))
+                }
         btnCreateAccount!!
-                .setOnClickListener { startActivity(Intent(this@LoginActivity,
-                        RegisterActivity::class.java)) }
+                .setOnClickListener {
+                    startActivity(Intent(this@LoginActivity,
+                            RegisterActivity::class.java))
+                }
         btnLogin!!.setOnClickListener { loginUser() }
     }
-
 
 
     private fun loginUser() {
