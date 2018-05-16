@@ -1,41 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-
-    <style name="AppTheme.NoActionBar.NoTitleBar.Fullscreen" parent="Theme.AppCompat.Light.DarkActionBar">
-
-        <item name="windowActionBar">false</item>
-        <item name="android:windowDisablePreview">true</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <!-- Base application theme. -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#2F3045</item>
+        <item name="colorPrimaryDark">#232534</item>
+        <item name="colorAccent">#000000</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
-
-    <style name="AppTheme.NoTitleBar.Fullscreen.DarkTransparent" parent="Theme.AppCompat.Light.DarkActionBar">
-
-        <item name="windowActionBar">true</item>
-        <item name="android:windowDisablePreview">true</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">false</item>
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/dark_transparent</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.NoTitleBar.Fullscreen.Transparent" parent="Theme.AppCompat.Light.DarkActionBar">
-
-        <item name="windowActionBar">true</item>
-        <item name="android:windowDisablePreview">true</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">false</item>
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/transparent</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">#ffffff</item>
     </style>
 
     <!--REGISTER PAGE-->

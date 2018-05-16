@@ -12,8 +12,8 @@
         android:id="@+id/waveHeader"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        app:mwhCloseColor="@color/colorWhite"
-        app:mwhStartColor="@color/colorWhite" />
+        app:mwhCloseColor="@color/colorPrimaryDark"
+        app:mwhStartColor="@color/colorPrimaryDark" />
 
     <EditText
         android:id="@+id/et_email"
