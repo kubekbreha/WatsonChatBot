@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
 
     private var navPosition: BottomNavigationPosition = BottomNavigationPosition.PEOPLES
 
-    private lateinit var toolbar: Toolbar
 
     private lateinit var bottomNavigation: BottomNavigationView
 
@@ -31,9 +30,7 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
         super.onCreate(savedInstanceState)
         restoreSaveInstanceState(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toolbar = findViewById(R.id.toolbar)
         bottomNavigation = findViewById(R.id.bottom_navigation)
-        setSupportActionBar(toolbar)
         initBottomNavigation()
         initFragment(savedInstanceState)
     }
