@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
 
     private val KEY_POSITION = "keyPosition"
 
-    private var navPosition: BottomNavigationPosition = BottomNavigationPosition.HOME
+    private var navPosition: BottomNavigationPosition = BottomNavigationPosition.PEOPLES
 
     private lateinit var toolbar: Toolbar
 
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
     private fun restoreSaveInstanceState(savedInstanceState: Bundle?) {
         // Restore the current navigation position.
         savedInstanceState?.also {
-            val id = it.getInt(KEY_POSITION, BottomNavigationPosition.HOME.id)
+            val id = it.getInt(KEY_POSITION, BottomNavigationPosition.PEOPLES.id)
             navPosition = findNavigationPositionById(id)
         }
     }
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
     }
 
     private fun initFragment(savedInstanceState: Bundle?) {
-        savedInstanceState ?: switchFragment(BottomNavigationPosition.HOME)
+        savedInstanceState ?: switchFragment(BottomNavigationPosition.PEOPLES)
     }
 
     /**
