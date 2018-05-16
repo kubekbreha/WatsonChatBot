@@ -20,4 +20,8 @@
     <color name="bottom_unclicked">#9FA3A6</color>
     <color name="bottom_clicked">#F9FAFC</color>
 
+    <color name="transparent">#00000000</color>
+    <color name="dark_transparent">#41000000</color>
+
+
 </resources>
