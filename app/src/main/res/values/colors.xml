@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#2F7074</color>
     <color name="colorPrimaryDark">#2F7074</color>
     <color name="colorAccent">#FFFFFF</color>
@@ -14,5 +15,9 @@
 
     <color name="facebook">#2A5396</color>
     <color name="google">#DC4E42</color>
+
+    <color name="bottom_navigation">#41454E</color>
+    <color name="bottom_unclicked">#9FA3A6</color>
+    <color name="bottom_clicked">#F9FAFC</color>
 
 </resources>
