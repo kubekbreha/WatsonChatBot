@@ -21,7 +21,6 @@
         android:scaleX="1"
         android:scaleY="1"
         app:mwhCloseColor="@color/colorPrimary"
-        app:mwhIsRunning="false"
         app:mwhProgress="1"
         app:mwhStartColor="@color/colorPrimary"
         app:mwhVelocity="6"
@@ -37,7 +36,6 @@
         android:scaleX="-1"
         android:scaleY="-1"
         app:mwhCloseColor="@color/colorPrimary"
-        app:mwhIsRunning="false"
         app:mwhProgress="1"
         app:mwhStartColor="@color/colorPrimary"
         app:mwhVelocity="6"
@@ -62,10 +60,10 @@
 
 
     <Button
-        android:id="@+id/btn_register_account"
+        android:id="@+id/btn_google_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="104dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_rounded_white"
@@ -77,6 +75,31 @@
         android:drawableStart="@drawable/google_logo_color_xml"
         android:textSize="14sp" />
 
+
+
+    <TextView
+        android:id="@+id/sign_up_with_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btn_google_sign_in"
+        android:layout_centerHorizontal="true"
+        android:text="Sign up with email"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="By continuing, you agree to our Terms of Service and Privacy Policy"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/bottom_unclicked"
+        android:textSize="9sp"/>
 
     <!--<EditText-->
     <!--android:id="@+id/et_email"-->
