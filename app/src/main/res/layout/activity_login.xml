@@ -11,137 +11,158 @@
     <FrameLayout
         android:id="@+id/activity_tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="24dp" />
+        android:layout_height="24dp"
+        android:background="@color/dark_transparent"/>
 
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/waveHeaderLogin"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleY="1"
         android:scaleX="1"
-        app:mwhStartColor="@color/colorPrimary"
+        android:scaleY="1"
         app:mwhCloseColor="@color/colorPrimary"
-        app:mwhVelocity="6"
-        app:mwhProgress="1"
         app:mwhIsRunning="false"
+        app:mwhProgress="1"
+        app:mwhStartColor="@color/colorPrimary"
+        app:mwhVelocity="6"
         app:mwhWaveHeight="24dp"
         app:mwhWaves="
-            70,25,1.4,1.4,-26"/>
+            70,25,1.4,1.4,-26" />
 
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/waveFooterLogin"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:scaleY="-1"
+        android:layout_alignParentBottom="true"
         android:scaleX="-1"
-        app:mwhStartColor="@color/colorPrimary"
+        android:scaleY="-1"
         app:mwhCloseColor="@color/colorPrimary"
-        app:mwhVelocity="6"
-        app:mwhProgress="1"
         app:mwhIsRunning="false"
+        app:mwhProgress="1"
+        app:mwhStartColor="@color/colorPrimary"
+        app:mwhVelocity="6"
         app:mwhWaveHeight="32dp"
         app:mwhWaves="
-            16,25,1.4,1.4,-26"/>
+            16,25,1.4,1.4,-26" />
 
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_below="@+id/activity_tab_layout"-->
-        <!--android:layout_margin="16dp"-->
-        <!--android:text="Log in"-->
-        <!--android:textColor="@color/colorWhite"-->
-        <!--android:textStyle="bold" />-->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/activity_tab_layout"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Log in"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold" />
+
+
+
+    <Button
+        android:id="@+id/btn_register_account"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_rounded_white"
+        android:elevation="0dp"
+        android:minWidth="120dp"
+        android:text="  SIGN IN WITH GOOGLE    "
+        android:textColor="@color/colorPrimary"
+        android:paddingStart="8dp"
+        android:drawableStart="@drawable/google_logo_color_xml"
+        android:textSize="14sp" />
 
 
     <!--<EditText-->
-        <!--android:id="@+id/et_email"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_marginBottom="227dp"-->
-        <!--android:layout_marginLeft="24dp"-->
-        <!--android:layout_marginRight="24dp"-->
-        <!--android:backgroundTint="@color/colorWhite"-->
-        <!--android:ems="10"-->
-        <!--android:hint="@string/email"-->
-        <!--android:inputType="textEmailAddress"-->
-        <!--android:shadowColor="@color/colorWhite"-->
-        <!--android:textColor="@color/colorWhite"-->
-        <!--android:textColorHint="@color/colorWhite"-->
-        <!--android:textColorLink="@color/colorWhite" />-->
+    <!--android:id="@+id/et_email"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_marginBottom="227dp"-->
+    <!--android:layout_marginLeft="24dp"-->
+    <!--android:layout_marginRight="24dp"-->
+    <!--android:backgroundTint="@color/colorWhite"-->
+    <!--android:ems="10"-->
+    <!--android:hint="@string/email"-->
+    <!--android:inputType="textEmailAddress"-->
+    <!--android:shadowColor="@color/colorWhite"-->
+    <!--android:textColor="@color/colorWhite"-->
+    <!--android:textColorHint="@color/colorWhite"-->
+    <!--android:textColorLink="@color/colorWhite" />-->
 
     <!--<EditText-->
-        <!--android:id="@+id/et_password"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_marginBottom="171dp"-->
-        <!--android:layout_marginLeft="24dp"-->
-        <!--android:layout_marginRight="24dp"-->
-        <!--android:backgroundTint="@color/colorWhite"-->
-        <!--android:ems="10"-->
-        <!--android:hint="@string/password"-->
-        <!--android:inputType="textPassword"-->
-        <!--android:shadowColor="@color/colorWhite"-->
-        <!--android:textColor="@color/colorWhite"-->
-        <!--android:textColorHint="@color/colorWhite"-->
-        <!--android:textColorLink="@color/colorWhite" />-->
+    <!--android:id="@+id/et_password"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_marginBottom="171dp"-->
+    <!--android:layout_marginLeft="24dp"-->
+    <!--android:layout_marginRight="24dp"-->
+    <!--android:backgroundTint="@color/colorWhite"-->
+    <!--android:ems="10"-->
+    <!--android:hint="@string/password"-->
+    <!--android:inputType="textPassword"-->
+    <!--android:shadowColor="@color/colorWhite"-->
+    <!--android:textColor="@color/colorWhite"-->
+    <!--android:textColorHint="@color/colorWhite"-->
+    <!--android:textColorLink="@color/colorWhite" />-->
 
 
     <!--<RelativeLayout-->
-        <!--android:id="@+id/login_buttons"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="60dp"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_marginBottom="80dp">-->
+    <!--android:id="@+id/login_buttons"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginBottom="80dp">-->
 
-        <!--<Button-->
-            <!--android:id="@+id/btn_register_account"-->
-            <!--android:layout_width="148dp"-->
-            <!--android:layout_height="64dp"-->
-            <!--android:layout_alignParentStart="true"-->
-            <!--android:layout_marginStart="24dp"-->
-            <!--android:background="@drawable/button_rounded"-->
-            <!--android:elevation="0dp"-->
-            <!--android:minWidth="120dp"-->
-            <!--android:text="Sign In"-->
-            <!--android:textColor="#ffffff"-->
-            <!--android:textSize="16sp" />-->
+    <!--<Button-->
+    <!--android:id="@+id/btn_register_account"-->
+    <!--android:layout_width="148dp"-->
+    <!--android:layout_height="64dp"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_marginStart="24dp"-->
+    <!--android:background="@drawable/button_rounded_red"-->
+    <!--android:elevation="0dp"-->
+    <!--android:minWidth="120dp"-->
+    <!--android:text="Sign In"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="16sp" />-->
 
-        <!--<Button-->
-            <!--android:id="@+id/btn_login"-->
-            <!--android:layout_width="148dp"-->
-            <!--android:layout_height="64dp"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_marginEnd="24dp"-->
-            <!--android:background="@drawable/button_rounded_empty"-->
-            <!--android:clickable="true"-->
-            <!--android:elevation="0dp"-->
-            <!--android:minWidth="120dp"-->
-            <!--android:text="Sign Up"-->
-            <!--android:textColor="#ffffff"-->
-            <!--android:textSize="16sp" />-->
+    <!--<Button-->
+    <!--android:id="@+id/btn_login"-->
+    <!--android:layout_width="148dp"-->
+    <!--android:layout_height="64dp"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_marginEnd="24dp"-->
+    <!--android:background="@drawable/button_rounded_empty"-->
+    <!--android:clickable="true"-->
+    <!--android:elevation="0dp"-->
+    <!--android:minWidth="120dp"-->
+    <!--android:text="Sign Up"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="16sp" />-->
     <!--</RelativeLayout>-->
 
 
     <!--<TextView-->
-        <!--android:id="@+id/tv_forgot_password"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginBottom="24dp"-->
-        <!--android:clickable="true"-->
-        <!--android:focusable="true"-->
-        <!--android:text="Forgot Password?"-->
-        <!--android:textColor="@color/colorWhite"-->
-        <!--android:textSize="16sp" />-->
+    <!--android:id="@+id/tv_forgot_password"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginBottom="24dp"-->
+    <!--android:clickable="true"-->
+    <!--android:focusable="true"-->
+    <!--android:text="Forgot Password?"-->
+    <!--android:textColor="@color/colorWhite"-->
+    <!--android:textSize="16sp" />-->
 
 
 </RelativeLayout>
