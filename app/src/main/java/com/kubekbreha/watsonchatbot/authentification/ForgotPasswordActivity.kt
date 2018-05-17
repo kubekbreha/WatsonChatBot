@@ -72,7 +72,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
 
     private fun updateUI() {
-        val intent = Intent(this@ForgotPasswordActivity, LoginActivity::class.java)
+        val intent = Intent(this@ForgotPasswordActivity, AuthenticationActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
