@@ -86,9 +86,9 @@
         android:elevation="0dp"
         android:minWidth="120dp"
         android:textAllCaps="false"
-        android:text="  Sign with Google    "
+        android:text="  Sign with Google          "
         android:textColor="@color/colorPrimary"
-        android:paddingStart="8dp"
+        android:paddingStart="28dp"
         android:drawableStart="@drawable/google_logo_color_xml"
         android:textSize="14sp" />
 
