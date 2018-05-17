@@ -17,21 +17,37 @@
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/waveHeaderLogin"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="264dp"
         android:scaleX="1"
         android:scaleY="1"
         app:mwhCloseColor="@color/colorPrimary"
         app:mwhProgress="1"
         app:mwhStartColor="@color/colorPrimary"
         app:mwhVelocity="6"
-        app:mwhWaveHeight="24dp"
+        app:mwhWaveHeight="32dp"
         app:mwhWaves="
             70,25,1.4,1.4,-26" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/activity_tab_layout"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="112dp"
+        android:text="Watson Chat App"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="28sp"/>
+
 
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/waveFooterLogin"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="248dp"
         android:layout_alignParentBottom="true"
         android:scaleX="-1"
         android:scaleY="-1"
@@ -45,7 +61,6 @@
 
 
     <TextView
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -54,8 +69,9 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="40dp"
         android:text="Log in"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold" />
+        android:textColor="@color/light_gray"
+        android:textStyle="bold"
+        android:textSize="14sp"/>
 
 
 
@@ -69,7 +85,8 @@
         android:background="@drawable/button_rounded_white"
         android:elevation="0dp"
         android:minWidth="120dp"
-        android:text="  SIGN IN WITH GOOGLE    "
+        android:textAllCaps="false"
+        android:text="  Sign with Google    "
         android:textColor="@color/colorPrimary"
         android:paddingStart="8dp"
         android:drawableStart="@drawable/google_logo_color_xml"
@@ -87,7 +104,7 @@
         android:layout_marginTop="60dp"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
-        android:textSize="16sp"/>
+        android:textSize="14sp"/>
 
 
     <TextView
@@ -98,7 +115,7 @@
         android:layout_marginBottom="16dp"
         android:text="By continuing, you agree to our Terms of Service and Privacy Policy"
         android:layout_marginTop="60dp"
-        android:textColor="@color/bottom_unclicked"
+        android:textColor="@color/light_gray"
         android:textSize="9sp"/>
 
     <!--<EditText-->
