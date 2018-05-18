@@ -111,7 +111,7 @@ class RegisterFragment : Fragment() {
         mDatabaseReference = mDatabase!!.reference!!.child("Users")
 
         btnCreateAccount!!.setOnClickListener { createNewAccount() }
-        btnBack!!.setOnClickListener { getActivity()!!.getFragmentManager().popBackStack() }
+        btnBack!!.setOnClickListener { activity!!.fragmentManager.popBackStack() }
 
         //google login
         btnGoogle!!.setOnClickListener { googleButtonOnClick() }

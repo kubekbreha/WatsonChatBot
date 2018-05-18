@@ -1,29 +1,87 @@
 package com.kubekbreha.watsonchatbot.authentification.fragments
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 
 import com.kubekbreha.watsonchatbot.R
+import com.kubekbreha.watsonchatbot.authentification.AuthenticationActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class ForgotFragment : Fragment() {
+
+    private val TAG = "ForgotPasswordFragment"
+
+    //UI elements
+    private var etEmail: EditText? = null
+    private var btnSubmit: Button? = null
+    private var btnBack: ImageButton? = null
+
+    //Firebase references
+    private var mAuth: FirebaseAuth? = null
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_forgot, container, false)
+    }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        initialise()
+    }
+
+
+    private fun initialise() {
+        etEmail = view!!.findViewById<View>(R.id.frag_forgot_edit_email) as EditText
+        btnSubmit = view!!.findViewById<View>(R.id.frag_forgot_btn_submit) as Button
+        btnBack = view!!.findViewById<View>(R.id.btn_back_from_forgot) as ImageButton
+        mAuth = FirebaseAuth.getInstance()
+        btnSubmit!!.setOnClickListener { sendPasswordResetEmail() }
+        btnBack!!.setOnClickListener{ activity!!.fragmentManager.popBackStack() }
+    }
+
+
+    private fun sendPasswordResetEmail() {
+        val email = etEmail?.text.toString()
+        if (!TextUtils.isEmpty(email)) {
+            mAuth!!
+                    .sendPasswordResetEmail(email)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val message = "Email sent."
+                            Log.d(TAG, message)
+                            Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
+                            updateUI()
+                        } else {
+                            Log.w(TAG, task.exception!!.message)
+                            Toast.makeText(activity, "No user found with this email.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+        } else {
+            Toast.makeText(activity, "Enter Email", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+    private fun updateUI() {
+        val intent = Intent(activity, AuthenticationActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
     }
 
 
