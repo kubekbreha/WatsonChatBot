@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.kubekbreha.watsonchatbot.main.MainActivity
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentification.fragments.AuthentificationFragment
+import com.kubekbreha.watsonchatbot.authentification.fragments.AuthenticationFragment
 
 
 class AuthenticationActivity : AppCompatActivity() {
@@ -39,7 +39,7 @@ class AuthenticationActivity : AppCompatActivity() {
         val w = window // in Activity's onCreate() for instance
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
-        val authFragment = AuthentificationFragment()
+        val authFragment = AuthenticationFragment()
         addFragment(authFragment, R.id.act_authentication_authentication_frame)
     }
 

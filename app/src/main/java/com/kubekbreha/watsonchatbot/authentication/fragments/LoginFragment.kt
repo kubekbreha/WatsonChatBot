@@ -44,6 +44,13 @@ class LoginFragment : Fragment() {
     }
 
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        initialise()
+    }
+
+
     private fun initialise() {
         textForgotPassword = view!!.findViewById<View>(R.id.frag_login_forgot) as TextView
         editEmail = view!!.findViewById<View>(R.id.frag_login_edit_email) as EditText

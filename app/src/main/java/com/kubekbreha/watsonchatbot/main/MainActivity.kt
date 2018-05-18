@@ -76,6 +76,8 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
         return true
     }
 
+
+
     private fun FragmentManager.findFragment(position: BottomNavigationPosition): Fragment {
         return findFragmentByTag(position.getTag()) ?: position.createFragment()
     }

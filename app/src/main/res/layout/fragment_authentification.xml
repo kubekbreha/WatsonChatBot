@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".authentification.fragments.AuthentificationFragment">
+    tools:context=".authentification.fragments.AuthenticationFragment">
 
 
     <FrameLayout
         android:id="@+id/frag_authentication_top_layout"
         android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:background="@color/dark_transparent"/>
+        android:background="@color/dark_transparent" />
 
 
     <com.scwang.wave.MultiWaveHeader
@@ -30,19 +30,18 @@
             70,25,1.4,1.4,-26" />
 
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/frag_authentication_wave_top"
+        android:layout_centerHorizontal="true"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="112dp"
         android:text="Watson Chat App"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:textSize="28sp"/>
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
 
     <com.scwang.wave.MultiWaveHeader
@@ -70,30 +69,30 @@
         android:layout_below="@+id/frag_authentication_top_layout"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="40dp"
+        android:clickable="true"
         android:text="Log in"
         android:textColor="@color/light_gray"
+        android:textSize="14sp"
         android:textStyle="bold"
-        android:textSize="14sp"/>
-
+        android:focusable="true" />
 
 
     <Button
         android:id="@+id/frag_authentication_btn_google_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="104dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/button_rounded_white"
+        android:drawableStart="@drawable/google_logo_color_xml"
         android:elevation="0dp"
         android:minWidth="120dp"
-        android:textAllCaps="false"
-        android:text="  Sign with Google          "
-        android:textColor="@color/colorPrimary"
         android:paddingStart="28dp"
-        android:drawableStart="@drawable/google_logo_color_xml"
+        android:text="  Sign with Google          "
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
         android:textSize="14sp" />
-
 
 
     <TextView
@@ -102,11 +101,11 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/frag_authentication_btn_google_sign_in"
         android:layout_centerHorizontal="true"
-        android:text="Sign up with email"
         android:layout_marginTop="60dp"
+        android:text="Sign up with email"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
 
     <TextView
@@ -115,12 +114,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:text="By continuing, you agree to our Terms of Service and Privacy Policy"
         android:layout_marginTop="60dp"
+        android:text="By continuing, you agree to our Terms of Service and Privacy Policy"
         android:textColor="@color/light_gray"
-        android:textSize="9sp"/>
-
-
+        android:textSize="9sp" />
 
 
 </RelativeLayout>
