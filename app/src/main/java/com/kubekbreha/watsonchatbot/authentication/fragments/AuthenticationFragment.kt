@@ -33,9 +33,7 @@ class AuthenticationFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
 
         val view = inflater.inflate(R.layout.fragment_authentification, container, false)
-
         initialise(view)
-
         return view
     }
 
@@ -49,18 +47,13 @@ class AuthenticationFragment : Fragment() {
 
         textLogIn!!.setOnClickListener{
 
-            // Create new fragment and transaction
             val newFragment = LoginFragment()
             val transaction = fragmentManager!!.beginTransaction()
 
-            // Replace whatever is in the fragment_container view with this fragment,
-            // and add the transaction to the back stack if needed
             transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
             transaction.addToBackStack(null)
 
-            // Commit the transaction
             transaction.commit()
-
         }
 
     }

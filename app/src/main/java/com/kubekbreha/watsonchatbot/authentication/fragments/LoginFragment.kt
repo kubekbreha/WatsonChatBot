@@ -22,7 +22,7 @@ import com.kubekbreha.watsonchatbot.main.MainActivity
 
 class LoginFragment : Fragment() {
 
-    private var TAG : String = "LoginFragment"
+    private var TAG: String = "LoginFragment"
 
     //global variables
     private var email: String? = null
@@ -37,32 +37,33 @@ class LoginFragment : Fragment() {
 
     private var mAuth: FirebaseAuth? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        initialise(view)
+        return view
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        initialise()
-    }
-
-
-    private fun initialise() {
-        textForgotPassword = view!!.findViewById<View>(R.id.frag_login_forgot) as TextView
-        editEmail = view!!.findViewById<View>(R.id.frag_login_edit_email) as EditText
-        editPassword = view!!.findViewById<View>(R.id.frag_login_edit_password) as EditText
-        butonLogin = view!!.findViewById<View>(R.id.frag_login_btn_login) as Button
-        mProgressBar = ProgressDialog(activity)
+    private fun initialise(view: View) {
+        textForgotPassword = view.findViewById<View>(R.id.frag_login_forgot) as TextView
+        editEmail = view.findViewById<View>(R.id.frag_login_edit_email) as EditText
+        editPassword = view.findViewById<View>(R.id.frag_login_edit_password) as EditText
+        butonLogin = view.findViewById<View>(R.id.frag_login_btn_login) as Button
+        mProgressBar = ProgressDialog(activity!!)
         mAuth = FirebaseAuth.getInstance()
-//        textForgotPassword!!
-//                .setOnClickListener {
-//                    startActivity(Intent(activity,
-//                            ForgotPasswordActivity::class.java))
-//                }
+
+        textForgotPassword!!.setOnClickListener {
+                    val newFragment = ForgotFragment()
+                    val transaction = fragmentManager!!.beginTransaction()
+
+                    transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+                    transaction.addToBackStack(null)
+
+                    transaction.commit()
+                }
+
         butonLogin!!.setOnClickListener { loginUser() }
     }
 
