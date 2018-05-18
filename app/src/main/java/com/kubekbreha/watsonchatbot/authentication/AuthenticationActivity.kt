@@ -1,14 +1,13 @@
 package com.kubekbreha.watsonchatbot.authentification
 
-import android.app.ProgressDialog
+import android.app.FragmentManager
+import android.app.FragmentTransaction
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -16,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.kubekbreha.watsonchatbot.main.MainActivity
 import com.kubekbreha.watsonchatbot.R
+import com.kubekbreha.watsonchatbot.authentification.fragments.AuthentificationFragment
 
 
 class AuthenticationActivity : AppCompatActivity() {
@@ -39,6 +39,8 @@ class AuthenticationActivity : AppCompatActivity() {
         val w = window // in Activity's onCreate() for instance
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
+        val authFragment = AuthentificationFragment()
+        addFragment(authFragment, R.id.act_authentication_authentication_frame)
     }
 
 
@@ -77,5 +79,24 @@ class AuthenticationActivity : AppCompatActivity() {
 
 
 
+    inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> Unit) {
+        val fragmentTransaction = beginTransaction()
+        fragmentTransaction.func()
+        fragmentTransaction.commit()
+    }
+
+
+    fun android.support.v4.app.FragmentManager.inTransaction(func: android.support.v4.app.FragmentTransaction.() -> android.support.v4.app.FragmentTransaction) {
+        beginTransaction().func().commit()
+    }
+
+    fun  AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) {
+        supportFragmentManager.inTransaction { add(frameId, fragment) }
+    }
+
+
+    fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) {
+        supportFragmentManager.inTransaction { replace(frameId, fragment) }
+    }
 
 }

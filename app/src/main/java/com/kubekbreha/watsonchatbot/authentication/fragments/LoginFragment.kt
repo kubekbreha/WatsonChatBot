@@ -17,8 +17,6 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentification.ForgotPasswordActivity
-import com.kubekbreha.watsonchatbot.authentification.RegisterActivity
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
 
@@ -53,11 +51,11 @@ class LoginFragment : Fragment() {
         butonLogin = view!!.findViewById<View>(R.id.frag_login_btn_login) as Button
         mProgressBar = ProgressDialog(activity)
         mAuth = FirebaseAuth.getInstance()
-        textForgotPassword!!
-                .setOnClickListener {
-                    startActivity(Intent(activity,
-                            ForgotPasswordActivity::class.java))
-                }
+//        textForgotPassword!!
+//                .setOnClickListener {
+//                    startActivity(Intent(activity,
+//                            ForgotPasswordActivity::class.java))
+//                }
         butonLogin!!.setOnClickListener { loginUser() }
     }
 

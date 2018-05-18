@@ -19,16 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.MainActivity" />
 
-        <activity android:name=".authentification.RegisterActivity"
-            android:theme="@style/AppTheme.Base"/>
+        <activity android:name=".main.MainActivity"
+            android:theme="@style/AppTheme.Base" />
 
-        <activity android:name=".authentification.ForgotPasswordActivity"
-            android:theme="@style/AppTheme.Base"/>
 
-        <activity android:name=".authentification.CheckActivity"
-            android:theme="@style/AppTheme.Base"/>
     </application>
 
 </manifest>

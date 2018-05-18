@@ -49,7 +49,7 @@ class ForgotFragment : Fragment() {
     private fun initialise() {
         etEmail = view!!.findViewById<View>(R.id.frag_forgot_edit_email) as EditText
         btnSubmit = view!!.findViewById<View>(R.id.frag_forgot_btn_submit) as Button
-        btnBack = view!!.findViewById<View>(R.id.btn_back_from_forgot) as ImageButton
+        btnBack = view!!.findViewById<View>(R.id.frag_forgot_btn_back_from_forgot) as ImageButton
         mAuth = FirebaseAuth.getInstance()
         btnSubmit!!.setOnClickListener { sendPasswordResetEmail() }
         btnBack!!.setOnClickListener{ activity!!.fragmentManager.popBackStack() }
