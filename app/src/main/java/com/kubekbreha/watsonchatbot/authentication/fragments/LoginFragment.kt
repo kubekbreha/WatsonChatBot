@@ -10,10 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 
 import com.kubekbreha.watsonchatbot.R
@@ -32,7 +29,8 @@ class LoginFragment : Fragment() {
     private var textForgotPassword: TextView? = null
     private var editEmail: EditText? = null
     private var editPassword: EditText? = null
-    private var butonLogin: Button? = null
+    private var btnLogin: Button? = null
+    private var btnBack: ImageButton? = null
     private var mProgressBar: ProgressDialog? = null
 
     private var mAuth: FirebaseAuth? = null
@@ -50,7 +48,8 @@ class LoginFragment : Fragment() {
         textForgotPassword = view.findViewById<View>(R.id.frag_login_forgot) as TextView
         editEmail = view.findViewById<View>(R.id.frag_login_edit_email) as EditText
         editPassword = view.findViewById<View>(R.id.frag_login_edit_password) as EditText
-        butonLogin = view.findViewById<View>(R.id.frag_login_btn_login) as Button
+        btnLogin = view.findViewById<View>(R.id.frag_login_btn_login) as Button
+        btnBack = view.findViewById<View>(R.id.frag_login_btn_back_from_login) as ImageButton
         mProgressBar = ProgressDialog(activity!!)
         mAuth = FirebaseAuth.getInstance()
 
@@ -64,7 +63,9 @@ class LoginFragment : Fragment() {
                     transaction.commit()
                 }
 
-        butonLogin!!.setOnClickListener { loginUser() }
+        btnLogin!!.setOnClickListener { loginUser() }
+
+        btnBack!!.setOnClickListener{ activity!!.onBackPressed() }
     }
 
 

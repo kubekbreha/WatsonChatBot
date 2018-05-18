@@ -32,27 +32,22 @@ class ForgotFragment : Fragment() {
     private var mAuth: FirebaseAuth? = null
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forgot, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+
+        val view = inflater.inflate(R.layout.fragment_forgot, container, false)
+        initialise(view)
+        return view
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        initialise()
-    }
-
-
-    private fun initialise() {
-        etEmail = view!!.findViewById<View>(R.id.frag_forgot_edit_email) as EditText
-        btnSubmit = view!!.findViewById<View>(R.id.frag_forgot_btn_submit) as Button
-        btnBack = view!!.findViewById<View>(R.id.frag_forgot_btn_back_from_forgot) as ImageButton
+    private fun initialise(view: View) {
+        etEmail = view.findViewById<View>(R.id.frag_forgot_edit_email) as EditText
+        btnSubmit = view.findViewById<View>(R.id.frag_forgot_btn_submit) as Button
+        btnBack = view.findViewById<View>(R.id.frag_forgot_btn_back_from_forgot) as ImageButton
         mAuth = FirebaseAuth.getInstance()
         btnSubmit!!.setOnClickListener { sendPasswordResetEmail() }
-        btnBack!!.setOnClickListener{ activity!!.fragmentManager.popBackStack() }
+        btnBack!!.setOnClickListener{ activity!!.onBackPressed() }
     }
 
 
