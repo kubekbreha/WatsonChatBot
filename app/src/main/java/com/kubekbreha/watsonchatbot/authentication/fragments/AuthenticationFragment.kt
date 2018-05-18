@@ -1,7 +1,6 @@
-package com.kubekbreha.watsonchatbot.authentification.fragments
+package com.kubekbreha.watsonchatbot.authentication.fragments
 
 
-import android.app.ProgressDialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -9,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -23,7 +21,7 @@ class AuthenticationFragment : Fragment() {
 
     //UI elements
     private var textLogIn: TextView? = null
-    private var textSignIn: TextView? = null
+    private var textSignUp: TextView? = null
     private var buttonGoogle: Button? = null
 
     private var mAuth: FirebaseAuth? = null
@@ -42,12 +40,23 @@ class AuthenticationFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
 
         textLogIn = view.findViewById<View>(R.id.frag_authentication_login) as TextView
-        textSignIn = view.findViewById<View>(R.id.frag_authentication_sign_up_with_email) as TextView
+        textSignUp = view.findViewById<View>(R.id.frag_authentication_sign_up_with_email) as TextView
         buttonGoogle = view.findViewById<View>(R.id.frag_authentication_btn_google_sign_in) as Button
 
         textLogIn!!.setOnClickListener{
 
             val newFragment = LoginFragment()
+            val transaction = fragmentManager!!.beginTransaction()
+
+            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+            transaction.addToBackStack(null)
+
+            transaction.commit()
+        }
+
+        textSignUp!!.setOnClickListener{
+
+            val newFragment = RegisterFragment()
             val transaction = fragmentManager!!.beginTransaction()
 
             transaction.replace(R.id.act_authentication_authentication_frame, newFragment)

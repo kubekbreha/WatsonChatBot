@@ -1,4 +1,4 @@
-package com.kubekbreha.watsonchatbot.authentification.fragments
+package com.kubekbreha.watsonchatbot.authentication.fragments
 
 
 import android.app.ProgressDialog
@@ -15,16 +15,16 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import com.google.android.gms.auth.api.Auth
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.main.MainActivity
-
-
 
 class RegisterFragment : Fragment() {
 
@@ -61,30 +61,20 @@ class RegisterFragment : Fragment() {
     var googleApiClient: GoogleApiClient? = null
 
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        val view = inflater.inflate(R.layout.fragment_register, container, false)
+        initialise(view)
+        return view
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        initialise()
-    }
-
-
-    private fun initialise() {
+    private fun initialise(view: View) {
         mAuth = FirebaseAuth.getInstance()
 
 
-        //automaticaly log user
-        if(mAuth!!.currentUser != null){
-            updateUserInfoAndUI()
-        }
+
 
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.request_client_id))
@@ -93,18 +83,18 @@ class RegisterFragment : Fragment() {
 
         // Creating and Configuring Google Api Client.
         googleApiClient = GoogleApiClient.Builder(activity!!)
-                .enableAutoManage(activity!!  /* OnConnectionFailedListener */) { }
+                .enableAutoManage(activity!!) { }
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build()
 
 
-        editUsername = view!!.findViewById<View>(R.id.frag_register_edit_username) as EditText
-        editEmail = view!!.findViewById<View>(R.id.frag_register_edit_email) as EditText
-        editPassword = view!!.findViewById<View>(R.id.frag_register_edit_password) as EditText
-        btnCreateAccount = view!!.findViewById<View>(R.id.frag_register_btn_register) as Button
-        btnBack = view!!.findViewById<View>(R.id.frag_register_btn_back_from_register) as ImageButton
-        btnGoogle = view!!.findViewById<View>(R.id.frag_register_register_button_google) as Button
-        btnFacebook = view!!.findViewById<View>(R.id.frag_register_register_button_facebook) as Button
+        editUsername = view.findViewById<View>(R.id.frag_register_edit_username) as EditText
+        editEmail = view.findViewById<View>(R.id.frag_register_edit_email) as EditText
+        editPassword = view.findViewById<View>(R.id.frag_register_edit_password) as EditText
+        btnCreateAccount = view.findViewById<View>(R.id.frag_register_btn_register) as Button
+        btnBack = view.findViewById<View>(R.id.frag_register_btn_back_from_register) as ImageButton
+        btnGoogle = view.findViewById<View>(R.id.frag_register_register_button_google) as Button
+        btnFacebook = view.findViewById<View>(R.id.frag_register_register_button_facebook) as Button
 
         mProgressBar = ProgressDialog(activity)
         mDatabase = FirebaseDatabase.getInstance()
@@ -116,8 +106,10 @@ class RegisterFragment : Fragment() {
         //google login
         btnGoogle!!.setOnClickListener { googleButtonOnClick() }
 
-        btnFacebook!!.setOnClickListener{   Toast.makeText(activity, "Not implemented yet.",
-                Toast.LENGTH_SHORT).show()    }
+        btnFacebook!!.setOnClickListener {
+            Toast.makeText(activity, "Not implemented yet.",
+                    Toast.LENGTH_SHORT).show()
+        }
 
 
     }
@@ -204,6 +196,37 @@ class RegisterFragment : Fragment() {
     }
 
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.i(TAG, "Got Result code ${requestCode}.")
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == GOOGLE_LOG_IN_RC) {
+            val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
+            Log.i(TAG, "With Google LogIn, is result a success? ${result.isSuccess}.")
+            if (result.isSuccess) {
+                // Google Sign In was successful, authenticate with Firebase
+                firebaseAuthWithGoogle(result.signInAccount!!)
+            } else {
+                Toast.makeText(activity, "Some error occurred.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        Log.i(TAG, "Authenticating user with firebase.")
+        val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
+        mAuth?.signInWithCredential(credential)?.addOnCompleteListener(this!!.activity!!) { task ->
+            Log.i(TAG, "Firebase Authentication, is result a success? ${task.isSuccessful}.")
+            if (task.isSuccessful) {
+                // Sign in success, update UI with the signed-in user's information
+                startActivity(Intent(activity, MainActivity::class.java))
+            } else {
+                // If sign in fails, display a message to the user.
+                Log.e(TAG, "Authenticating with Google credentials in firebase FAILED !!")
+            }
+        }
+    }
 
 }
 

@@ -4,12 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/registerBackground"
-    tools:context=".authentification.RegisterActivity">
+    tools:context=".authentication.fragments.RegisterFragment">
+
+
+    <FrameLayout
+        android:id="@+id/frag_register_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@color/dark_transparent" />
+
 
     <ImageButton
         android:id="@+id/frag_register_btn_back_from_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/frag_register_top_layout"
         android:layout_margin="16dp"
         android:background="@color/registerBackground"
         android:src="@drawable/ic_arrow_back" />

@@ -1,4 +1,4 @@
-package com.kubekbreha.watsonchatbot.authentification.fragments
+package com.kubekbreha.watsonchatbot.authentication.fragments
 
 
 import android.content.Intent
