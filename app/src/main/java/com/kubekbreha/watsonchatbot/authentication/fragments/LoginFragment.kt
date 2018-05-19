@@ -71,8 +71,7 @@ class LoginFragment : Fragment() {
         }
 
         btnTextGoToSignUp!!.setOnClickListener{
-            Toast.makeText(activity, "Clicked",
-                    Toast.LENGTH_SHORT).show()
+
             val newFragment = RegisterFragment()
             val transaction = fragmentManager!!.beginTransaction()
 
@@ -83,8 +82,7 @@ class LoginFragment : Fragment() {
         }
 
         btntGoToSignUp!!.setOnClickListener{
-            Toast.makeText(activity, "Clicked",
-                    Toast.LENGTH_SHORT).show()
+
             val newFragment = RegisterFragment()
             val transaction = fragmentManager!!.beginTransaction()
 

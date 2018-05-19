@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     tools:context=".authentication.fragments.RegisterFragment">
 
 
@@ -39,54 +39,57 @@
     <EditText
         android:id="@+id/frag_register_edit_username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/frag_register_text_register"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="72dp"
-        android:backgroundTint="@color/colorWhite"
+        android:background="@drawable/edit_rounded_dark"
         android:ems="10"
         android:hint="@string/user_name"
+        android:paddingStart="12dp"
         android:shadowColor="@color/colorWhite"
         android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite"
+        android:textColorHint="@color/light_gray"
         android:textColorLink="@color/colorWhite" />
 
 
     <EditText
         android:id="@+id/frag_register_edit_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/frag_register_edit_username"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="64dp"
-        android:backgroundTint="@color/colorWhite"
+        android:background="@drawable/edit_rounded_dark"
         android:ems="10"
         android:hint="@string/email"
+        android:paddingStart="12dp"
         android:shadowColor="@color/colorWhite"
         android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite"
+        android:textColorHint="@color/light_gray"
         android:textColorLink="@color/colorWhite" />
 
 
     <EditText
         android:id="@+id/frag_register_edit_password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/frag_register_edit_email"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="64dp"
-        android:backgroundTint="@color/colorWhite"
+        android:background="@drawable/edit_rounded_dark"
         android:ems="10"
         android:hint="@string/password"
+        android:paddingStart="12dp"
         android:shadowColor="@color/colorWhite"
         android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite"
+        android:textColorHint="@color/light_gray"
         android:textColorLink="@color/colorWhite" />
 
     <Button
@@ -112,12 +115,12 @@
         android:layout_below="@id/frag_register_btn_register"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:text="or sign up with"
-        android:textColor="@color/light_gray"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:textAllCaps="false"
         android:background="@color/transparent"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:text="or sign up with"
+        android:textAllCaps="false"
+        android:textColor="@color/light_gray"
         android:textSize="14sp" />
 
 
@@ -136,22 +139,22 @@
             android:layout_centerHorizontal="true"
             android:layout_marginEnd="64dp"
             android:background="@drawable/button_background_facebook"
+            android:clickable="true"
             android:drawableStart="@drawable/fb_logo_xml"
             android:elevation="0dp"
-            android:clickable="true"
-            android:paddingStart="6dp"
-            android:focusable="true" />
+            android:focusable="true"
+            android:paddingStart="6dp" />
 
         <Button
             android:id="@+id/frag_register_register_button_google"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:clickable="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/button_background_google"
+            android:clickable="true"
             android:drawableStart="@drawable/google_logo_xml"
-            android:paddingStart="10dp"
-            android:focusable="true" />
+            android:focusable="true"
+            android:paddingStart="10dp" />
 
 
     </RelativeLayout>

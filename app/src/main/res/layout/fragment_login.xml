@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/frag_login_top_layout"
         android:layout_margin="16dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/transparent"
         android:src="@drawable/ic_arrow_back" />
 
 
