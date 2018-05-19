@@ -22,6 +22,7 @@
         android:scaleX="1"
         android:scaleY="1"
         app:mwhCloseColor="@color/colorPrimary"
+        app:mwhColorAlpha="1"
         app:mwhProgress="1"
         app:mwhStartColor="@color/colorPrimary"
         app:mwhVelocity="6"
@@ -37,6 +38,7 @@
         android:scaleX="-1"
         android:scaleY="-1"
         app:mwhCloseColor="@color/colorPrimary"
+        app:mwhColorAlpha="1"
         app:mwhProgress="1"
         app:mwhStartColor="@color/colorPrimary"
         app:mwhVelocity="6"
@@ -67,15 +69,15 @@
         android:layout_alignParentTop="true"
         android:layout_below="@+id/frag_authentication_top_layout"
         android:layout_marginEnd="8dp"
-        android:background="@color/transparent"
         android:layout_marginTop="32dp"
-        android:textAllCaps="false"
+        android:background="@color/transparent"
         android:clickable="true"
+        android:focusable="true"
         android:text="Log in"
+        android:textAllCaps="false"
         android:textColor="@color/light_gray"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:focusable="true" />
+        android:textStyle="bold" />
 
 
     <Button
@@ -103,11 +105,11 @@
         android:layout_alignTop="@id/frag_authentication_btn_google_sign_in"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:textAllCaps="false"
         android:background="@color/transparent"
-        android:text="Sign up with email"
-        android:paddingStart="8dp"
         android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:text="Sign up with email"
+        android:textAllCaps="false"
         android:textColor="@color/colorWhite"
         android:textSize="14sp"
         android:textStyle="bold" />
