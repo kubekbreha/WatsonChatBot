@@ -26,6 +26,9 @@ class LoginFragment : Fragment() {
     private var password: String? = null
 
     //UI elements
+    private var goToSignUp: RelativeLayout? = null
+    private var btnTextGoToSignUp: Button? = null
+    private var btntGoToSignUp: Button? = null
     private var textForgotPassword: TextView? = null
     private var editEmail: EditText? = null
     private var editPassword: EditText? = null
@@ -45,6 +48,10 @@ class LoginFragment : Fragment() {
 
 
     private fun initialise(view: View) {
+        goToSignUp = view.findViewById<View>(R.id.frag_login_goto_sign_up) as RelativeLayout
+        btnTextGoToSignUp = view.findViewById<View>(R.id.frag_login_goto_signin_text) as Button
+        btntGoToSignUp = view.findViewById<View>(R.id.frag_login_goto_signin_button) as Button
+
         textForgotPassword = view.findViewById<View>(R.id.frag_login_forgot) as TextView
         editEmail = view.findViewById<View>(R.id.frag_login_edit_email) as EditText
         editPassword = view.findViewById<View>(R.id.frag_login_edit_password) as EditText
@@ -54,18 +61,42 @@ class LoginFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
 
         textForgotPassword!!.setOnClickListener {
-                    val newFragment = ForgotFragment()
-                    val transaction = fragmentManager!!.beginTransaction()
+            val newFragment = ForgotFragment()
+            val transaction = fragmentManager!!.beginTransaction()
 
-                    transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
-                    transaction.addToBackStack(null)
+            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+            transaction.addToBackStack(null)
 
-                    transaction.commit()
-                }
+            transaction.commit()
+        }
+
+        btnTextGoToSignUp!!.setOnClickListener{
+            Toast.makeText(activity, "Clicked",
+                    Toast.LENGTH_SHORT).show()
+            val newFragment = RegisterFragment()
+            val transaction = fragmentManager!!.beginTransaction()
+
+            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+            transaction.addToBackStack(null)
+
+            transaction.commit()
+        }
+
+        btntGoToSignUp!!.setOnClickListener{
+            Toast.makeText(activity, "Clicked",
+                    Toast.LENGTH_SHORT).show()
+            val newFragment = RegisterFragment()
+            val transaction = fragmentManager!!.beginTransaction()
+
+            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+            transaction.addToBackStack(null)
+
+            transaction.commit()
+        }
 
         btnLogin!!.setOnClickListener { loginUser() }
 
-        btnBack!!.setOnClickListener{ activity!!.onBackPressed() }
+        btnBack!!.setOnClickListener { activity!!.onBackPressed() }
     }
 
 

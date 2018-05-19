@@ -159,6 +159,4 @@ class AuthenticationFragment : Fragment() {
         supportFragmentManager.inTransaction { replace(frameId, fragment) }
     }
 
-
-
 }

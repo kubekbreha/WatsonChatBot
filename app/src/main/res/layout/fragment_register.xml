@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/registerBackground"
+    android:background="@color/colorPrimaryDark"
     tools:context=".authentication.fragments.RegisterFragment">
 
 
@@ -11,7 +11,7 @@
         android:id="@+id/frag_register_top_layout"
         android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:background="@color/dark_transparent" />
+        android:background="@color/transparent" />
 
 
     <ImageButton
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/frag_register_top_layout"
         android:layout_margin="16dp"
-        android:background="@color/registerBackground"
+        android:background="@color/transparent"
         android:src="@drawable/ic_arrow_back" />
 
 
@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:text="Register acount"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -45,13 +45,13 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="72dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorWhite"
         android:ems="10"
         android:hint="@string/user_name"
-        android:shadowColor="@color/colorPrimary"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textColorLink="@color/colorPrimary" />
+        android:shadowColor="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textColorLink="@color/colorWhite" />
 
 
     <EditText
@@ -63,13 +63,13 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="64dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorWhite"
         android:ems="10"
         android:hint="@string/email"
-        android:shadowColor="@color/colorPrimary"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textColorLink="@color/colorPrimary" />
+        android:shadowColor="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textColorLink="@color/colorWhite" />
 
 
     <EditText
@@ -81,27 +81,27 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="64dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorWhite"
         android:ems="10"
         android:hint="@string/password"
-        android:shadowColor="@color/colorPrimary"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textColorLink="@color/colorPrimary" />
+        android:shadowColor="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textColorLink="@color/colorWhite" />
 
     <Button
         android:id="@+id/frag_register_btn_register"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/frag_register_edit_password"
         android:layout_below="@id/frag_register_edit_password"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="80dp"
-        android:background="@drawable/button_rounded_red"
+        android:background="@drawable/button_rounded_white"
         android:text="@string/create_act"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />
 
 
@@ -113,8 +113,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:text="or sign up with"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textColor="@color/light_gray"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textAllCaps="false"
+        android:background="@color/transparent"
+        android:textSize="14sp" />
 
 
     <RelativeLayout

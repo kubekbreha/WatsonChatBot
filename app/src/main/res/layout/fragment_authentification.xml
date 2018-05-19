@@ -12,7 +12,7 @@
         android:id="@+id/frag_authentication_top_layout"
         android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:background="@color/dark_transparent" />
+        android:background="@color/transparent" />
 
 
     <com.scwang.wave.MultiWaveHeader
