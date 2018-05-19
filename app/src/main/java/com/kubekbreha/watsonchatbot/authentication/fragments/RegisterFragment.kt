@@ -97,7 +97,7 @@ class RegisterFragment : Fragment() {
         mDatabaseReference = mDatabase!!.reference!!.child("Users")
 
         btnCreateAccount!!.setOnClickListener { createNewAccount() }
-        btnBack!!.setOnClickListener { activity!!.fragmentManager.popBackStack() }
+        btnBack!!.setOnClickListener { activity!!.onBackPressed() }
 
         //google login
         btnGoogle!!.setOnClickListener { googleButtonOnClick() }
@@ -106,8 +106,6 @@ class RegisterFragment : Fragment() {
             Toast.makeText(activity, "Not implemented yet.",
                     Toast.LENGTH_SHORT).show()
         }
-
-
     }
 
     private fun createNewAccount() {
