@@ -73,9 +73,6 @@ class RegisterFragment : Fragment() {
     private fun initialise(view: View) {
         mAuth = FirebaseAuth.getInstance()
 
-
-
-
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.request_client_id))
                 .requestEmail()
@@ -86,7 +83,6 @@ class RegisterFragment : Fragment() {
                 .enableAutoManage(activity!!) { }
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build()
-
 
         editUsername = view.findViewById<View>(R.id.frag_register_edit_username) as EditText
         editEmail = view.findViewById<View>(R.id.frag_register_edit_email) as EditText
@@ -157,7 +153,6 @@ class RegisterFragment : Fragment() {
 
 
     fun googleButtonOnClick() {
-
         Log.i(TAG, "Trying to login via google.")
         googleLogin()
 
@@ -175,6 +170,13 @@ class RegisterFragment : Fragment() {
         val intent = Intent(activity, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        googleApiClient!!.stopAutoManage(activity!!)
+        googleApiClient!!.disconnect()
     }
 
 
