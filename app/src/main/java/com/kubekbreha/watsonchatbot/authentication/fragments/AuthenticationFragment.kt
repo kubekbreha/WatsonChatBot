@@ -4,7 +4,6 @@ package com.kubekbreha.watsonchatbot.authentication.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
@@ -69,24 +67,23 @@ class AuthenticationFragment : Fragment() {
         btnGoogle = view.findViewById<View>(R.id.frag_authentication_btn_google_sign_in) as Button
 
         btnLogIn!!.setOnClickListener{
-
-            val newFragment = LoginFragment()
             val transaction = fragmentManager!!.beginTransaction()
-
-            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
             transaction.addToBackStack(null)
 
+            val newFragment = LoginFragment()
+
+            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
             transaction.commit()
         }
 
         btnSignUp!!.setOnClickListener{
 
-            val newFragment = RegisterFragment()
             val transaction = fragmentManager!!.beginTransaction()
-
-            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
             transaction.addToBackStack(null)
 
+            val newFragment = RegisterFragment()
+
+            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
             transaction.commit()
         }
 
@@ -143,20 +140,6 @@ class AuthenticationFragment : Fragment() {
                 Log.e(TAG, "Authenticating with Google credentials in firebase FAILED !!")
             }
         }
-    }
-
-
-    fun android.support.v4.app.FragmentManager.inTransaction(func: android.support.v4.app.FragmentTransaction.() -> android.support.v4.app.FragmentTransaction) {
-        beginTransaction().func().commit()
-    }
-
-    fun AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) {
-        supportFragmentManager.inTransaction { add(frameId, fragment) }
-    }
-
-
-    fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) {
-        supportFragmentManager.inTransaction { replace(frameId, fragment) }
     }
 
 }

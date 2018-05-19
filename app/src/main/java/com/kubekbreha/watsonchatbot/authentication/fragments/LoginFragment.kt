@@ -17,7 +17,7 @@ import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
 
-class LoginFragment : Fragment() {
+class LoginFragment : Fragment(){
 
     private var TAG: String = "LoginFragment"
 

@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import android.view.WindowManager
 import com.example.bottomnavigation.extension.active
 import com.example.bottomnavigation.extension.disableShiftMode
 import com.example.bottomnavigation.helper.BottomNavigationPosition
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
         bottomNavigation = findViewById(R.id.bottom_navigation)
         initBottomNavigation()
         initFragment(savedInstanceState)
+
+        //show transparent activity tab
+        val w = window // in Activity's onCreate() for instance
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
