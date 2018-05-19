@@ -16,7 +16,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentification.AuthenticationActivity
+import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
 
 
 class ForgotFragment : Fragment() {
@@ -78,6 +78,5 @@ class ForgotFragment : Fragment() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
-
 
 }

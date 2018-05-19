@@ -29,21 +29,6 @@
         app:mwhWaves="
             70,25,1.4,1.4,-26" />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_below="@+id/frag_authentication_wave_top"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="112dp"
-        android:text="Watson Chat App"
-        android:textColor="@color/colorWhite"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/frag_authentication_wave_bottom"
         android:layout_width="match_parent"
@@ -61,14 +46,30 @@
 
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/frag_authentication_wave_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="112dp"
+        android:text="Watson Chat App"
+        android:textColor="@color/colorWhite"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+
+    <Button
         android:id="@+id/frag_authentication_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_below="@+id/frag_authentication_top_layout"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/transparent"
+        android:layout_marginTop="32dp"
+        android:textAllCaps="false"
         android:clickable="true"
         android:text="Log in"
         android:textColor="@color/light_gray"
@@ -95,14 +96,18 @@
         android:textSize="14sp" />
 
 
-    <TextView
+    <Button
         android:id="@+id/frag_authentication_sign_up_with_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/frag_authentication_btn_google_sign_in"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
+        android:textAllCaps="false"
+        android:background="@color/transparent"
         android:text="Sign up with email"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:textColor="@color/colorWhite"
         android:textSize="14sp"
         android:textStyle="bold" />

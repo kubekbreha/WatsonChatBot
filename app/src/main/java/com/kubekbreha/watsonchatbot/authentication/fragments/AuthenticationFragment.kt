@@ -20,8 +20,8 @@ class AuthenticationFragment : Fragment() {
     private var TAG : String = "AuthenticationFragment"
 
     //UI elements
-    private var textLogIn: TextView? = null
-    private var textSignUp: TextView? = null
+    private var btnLogIn: Button? = null
+    private var btnSignUp: Button? = null
     private var buttonGoogle: Button? = null
 
     private var mAuth: FirebaseAuth? = null
@@ -39,11 +39,11 @@ class AuthenticationFragment : Fragment() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        textLogIn = view.findViewById<View>(R.id.frag_authentication_login) as TextView
-        textSignUp = view.findViewById<View>(R.id.frag_authentication_sign_up_with_email) as TextView
+        btnLogIn = view.findViewById<View>(R.id.frag_authentication_login) as Button
+        btnSignUp = view.findViewById<View>(R.id.frag_authentication_sign_up_with_email) as Button
         buttonGoogle = view.findViewById<View>(R.id.frag_authentication_btn_google_sign_in) as Button
 
-        textLogIn!!.setOnClickListener{
+        btnLogIn!!.setOnClickListener{
 
             val newFragment = LoginFragment()
             val transaction = fragmentManager!!.beginTransaction()
@@ -54,7 +54,7 @@ class AuthenticationFragment : Fragment() {
             transaction.commit()
         }
 
-        textSignUp!!.setOnClickListener{
+        btnSignUp!!.setOnClickListener{
 
             val newFragment = RegisterFragment()
             val transaction = fragmentManager!!.beginTransaction()
