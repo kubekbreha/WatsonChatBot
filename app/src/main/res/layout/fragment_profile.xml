@@ -14,7 +14,7 @@
         android:background="@color/colorPrimaryDark">
 
         <FrameLayout
-            android:id="@+id/frag_prifile_top_layout"
+            android:id="@+id/frag_profile_top_layout"
             android:layout_width="match_parent"
             android:layout_height="24dp"
             android:background="@color/transparent" />
@@ -26,7 +26,7 @@
             android:src="@drawable/ic_more_vert"
             android:background="@color/transparent"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/frag_prifile_top_layout"
+            android:layout_below="@+id/frag_profile_top_layout"
             android:layout_margin="8dp"
             android:padding="4dp"/>
 

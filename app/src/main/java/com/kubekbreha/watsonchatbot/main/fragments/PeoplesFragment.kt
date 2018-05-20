@@ -20,4 +20,5 @@ class PeoplesFragment : Fragment() {
         return view
     }
 
+
 }
