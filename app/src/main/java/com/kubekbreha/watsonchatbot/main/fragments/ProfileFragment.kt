@@ -18,6 +18,7 @@ import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
+import kotlin.math.log
 
 
 class ProfileFragment : Fragment() {
@@ -59,15 +60,18 @@ class ProfileFragment : Fragment() {
         val popupMenu = PopupMenu(activity!!, it, Gravity.RIGHT)
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-//                    R.id.menu_1 -> {
-//                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.sk/"))
-//                        startActivity(intent)
-//                        true
-//                    }
-//                    R.id.menu_2 -> {
-//                        Toast.makeText(activity, "Toast", Toast.LENGTH_SHORT).show()
-//                        true
-//                    }
+                    R.id.settings -> {
+                        Toast.makeText(activity, "Settings clicked.", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    R.id.help -> {
+                        Toast.makeText(activity, "Help clicked.", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    R.id.logout -> {
+                        logOutUser()
+                        true
+                    }
                     else -> false
                 }
             }
@@ -85,8 +89,6 @@ class ProfileFragment : Fragment() {
             } finally {
                 popupMenu.show()
             }
-
-
             popupMenu.show()
         }
 
