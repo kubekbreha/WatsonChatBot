@@ -59,15 +59,15 @@ class ProfileFragment : Fragment() {
         val popupMenu = PopupMenu(activity!!, it, Gravity.RIGHT)
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.menu_1 -> {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.sk/"))
-                        startActivity(intent)
-                        true
-                    }
-                    R.id.menu_2 -> {
-                        Toast.makeText(activity, "Toast", Toast.LENGTH_SHORT).show()
-                        true
-                    }
+//                    R.id.menu_1 -> {
+//                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.sk/"))
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    R.id.menu_2 -> {
+//                        Toast.makeText(activity, "Toast", Toast.LENGTH_SHORT).show()
+//                        true
+//                    }
                     else -> false
                 }
             }

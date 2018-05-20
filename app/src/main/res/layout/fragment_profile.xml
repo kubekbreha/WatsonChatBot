@@ -23,11 +23,11 @@
             android:id="@+id/frag_profile_settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_settings"
+            android:src="@drawable/ic_more_vert"
             android:background="@color/transparent"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/frag_prifile_top_layout"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:padding="4dp"/>
 
     </RelativeLayout>
