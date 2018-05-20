@@ -1,8 +1,12 @@
 package com.example.bottomnavigation.ui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.PopupMenu
+import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +20,7 @@ import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
 
 
-class ProfileFragment : Fragment(){
+class ProfileFragment : Fragment() {
 
     private var mAuth: FirebaseAuth? = null
     private var mGoogleApiClient: GoogleApiClient? = null
@@ -51,13 +55,46 @@ class ProfileFragment : Fragment(){
 
         mGoogleApiClient!!.connect()
 
-        btnSettings!!.setOnClickListener{
-            logOutUser()
+        btnSettings!!.setOnClickListener {
+        val popupMenu = PopupMenu(activity!!, it, Gravity.RIGHT)
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.menu_1 -> {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.sk/"))
+                        startActivity(intent)
+                        true
+                    }
+                    R.id.menu_2 -> {
+                        Toast.makeText(activity, "Toast", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            popupMenu.inflate(R.menu.menu_settengs_drop)
+
+            try {
+                val fieldMPopup = PopupMenu::class.java.getDeclaredField("mPopup")
+                fieldMPopup.isAccessible = true
+                val mPopup = fieldMPopup.get(popupMenu)
+                mPopup.javaClass.getDeclaredMethod("setForceShowIcon", Boolean::class.java)
+                        .invoke(mPopup, true)
+            } catch (e: Exception) {
+                Log.e("Main", "Error showing icon menu, ", e)
+            } finally {
+                popupMenu.show()
+            }
+
+
+            popupMenu.show()
         }
+
+
     }
 
 
-    fun logOutUser(){
+    fun logOutUser() {
         mAuth!!.signOut()
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback { updateUI() }
     }
@@ -70,10 +107,6 @@ class ProfileFragment : Fragment(){
         activity!!.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         activity!!.finish()
     }
-
-
-
-
 
 
 }
