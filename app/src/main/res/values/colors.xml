@@ -23,6 +23,7 @@
     <color name="transparent">#00000000</color>
     <color name="dark_transparent">#41000000</color>
     <color name="light_gray">#E0E0E0</color>
+    <color name="lighter_gray">#efefef</color>
 
 
 
