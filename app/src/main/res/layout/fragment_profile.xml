@@ -17,7 +17,7 @@
             android:id="@+id/frag_profile_top_layout"
             android:layout_width="match_parent"
             android:layout_height="24dp"
-            android:background="@color/transparent" />
+            android:background="@color/dark_transparent" />
 
         <ImageButton
             android:id="@+id/frag_profile_settings_button"
