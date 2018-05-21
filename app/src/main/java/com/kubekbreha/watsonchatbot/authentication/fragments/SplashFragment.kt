@@ -25,6 +25,7 @@ class SplashFragment : Fragment() {
             val intent = Intent(activity, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            activity!!.finish()
         }else{
             val newFragment = AuthenticationFragment()
             val transaction = fragmentManager!!.beginTransaction()

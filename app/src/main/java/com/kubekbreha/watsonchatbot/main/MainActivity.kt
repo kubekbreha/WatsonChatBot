@@ -105,7 +105,4 @@ class MainActivity : AppCompatActivity() , BottomNavigationView.OnNavigationItem
                 .commit()
     }
 
-
-
-
 }

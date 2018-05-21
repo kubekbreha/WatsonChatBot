@@ -168,6 +168,7 @@ class RegisterFragment : Fragment() {
         val intent = Intent(activity, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
+        activity!!.finish()
     }
 
 
@@ -221,6 +222,8 @@ class RegisterFragment : Fragment() {
             if (task.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
                 startActivity(Intent(activity, MainActivity::class.java))
+                activity!!.finish()
+
             } else {
                 // If sign in fails, display a message to the user.
                 Log.e(TAG, "Authenticating with Google credentials in firebase FAILED !!")
