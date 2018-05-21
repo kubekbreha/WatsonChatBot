@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 import com.kubekbreha.watsonchatbot.R
+import com.kubekbreha.watsonchatbot.authentication.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
 class RegisterFragment : Fragment() {
@@ -94,7 +95,7 @@ class RegisterFragment : Fragment() {
 
         mProgressBar = ProgressDialog(activity)
         mDatabase = FirebaseDatabase.getInstance()
-        mDatabaseReference = mDatabase!!.reference!!.child("Users")
+        //mDatabaseReference = mDatabase!!.reference!!.child("Users")
 
         btnCreateAccount!!.setOnClickListener { createNewAccount() }
         btnBack!!.setOnClickListener { activity!!.onBackPressed() }
@@ -132,9 +133,11 @@ class RegisterFragment : Fragment() {
                             //Verify Email
                             verifyEmail();
                             //update user profile information
-                            val currentUserDb = mDatabaseReference!!.child(userId)
-                            currentUserDb.child("userName").setValue(userName)
-                            updateUserInfoAndUI()
+                            //val currentUserDb = mDatabaseReference!!.child(userId)
+                            //currentUserDb.child("userName").setValue(userName)
+                            FirestoreUtil.initCurrentUserIfFirstTime {
+                                updateUserInfoAndUI()
+                            }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.exception)
@@ -221,9 +224,10 @@ class RegisterFragment : Fragment() {
             Log.i(TAG, "Firebase Authentication, is result a success? ${task.isSuccessful}.")
             if (task.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
-                startActivity(Intent(activity, MainActivity::class.java))
-                activity!!.finish()
-
+                FirestoreUtil.initCurrentUserIfFirstTime {
+                    startActivity(Intent(activity, MainActivity::class.java))
+                    activity!!.finish()
+                }
             } else {
                 // If sign in fails, display a message to the user.
                 Log.e(TAG, "Authenticating with Google credentials in firebase FAILED !!")

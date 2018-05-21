@@ -17,6 +17,7 @@ import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.kubekbreha.watsonchatbot.R
+import com.kubekbreha.watsonchatbot.authentication.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
 
@@ -134,8 +135,11 @@ class AuthenticationFragment : Fragment() {
             Log.i(TAG, "Firebase Authentication, is result a success? ${task.isSuccessful}.")
             if (task.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
-                startActivity(Intent(activity, MainActivity::class.java))
-                activity!!.finish()
+                FirestoreUtil.initCurrentUserIfFirstTime {
+                    startActivity(Intent(activity, MainActivity::class.java))
+                    activity!!.finish()
+                }
+
             } else {
                 // If sign in fails, display a message to the user.
                 Log.e(TAG, "Authenticating with Google credentials in firebase FAILED !!")
