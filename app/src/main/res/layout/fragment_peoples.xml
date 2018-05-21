@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:background="@color/registerBackground"
     android:orientation="vertical">
 
@@ -13,6 +15,8 @@
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:background="@color/colorWhite"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
         android:elevation="4dp">
 
         <FrameLayout
@@ -32,11 +36,12 @@
             android:layout_marginRight="16dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/edit_rounded_search"
+            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_search"
             android:ems="10"
+            android:imeOptions="flagNoExtractUi"
             android:maxLines="1"
             android:paddingStart="12dp"
-            android:drawablePadding="8dp"
             android:shadowColor="@color/colorWhite"
             android:textColor="@color/colorBlack"
             android:textColorLink="@color/colorWhite" />
