@@ -48,8 +48,10 @@
         android:background="@drawable/edit_rounded_dark"
         android:ems="10"
         android:hint="@string/email"
+        android:maxLines="1"
         android:paddingStart="12dp"
         android:shadowColor="@color/colorWhite"
+        android:singleLine="true"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/light_gray"
         android:textColorLink="@color/colorWhite" />
@@ -62,13 +64,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/frag_login_edit_email"
         android:layout_marginLeft="24dp"
-        android:paddingStart="12dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/edit_rounded_dark"
         android:ems="10"
         android:hint="@string/password"
+        android:maxLines="1"
+        android:paddingStart="12dp"
         android:shadowColor="@color/colorWhite"
+        android:singleLine="true"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/light_gray"
         android:textColorLink="@color/colorWhite" />
@@ -82,10 +86,10 @@
         android:layout_below="@id/frag_register_edit_password"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:textAllCaps="false"
         android:layout_marginTop="80dp"
         android:background="@drawable/button_rounded_white"
         android:text="Sign in"
+        android:textAllCaps="false"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />
 
@@ -112,8 +116,8 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:clickable="true"
         android:layout_marginBottom="16dp"
+        android:clickable="true"
         android:focusable="true">
 
         <Button
@@ -126,7 +130,6 @@
             android:textAllCaps="false"
             android:textColor="@color/light_gray"
             android:textSize="14sp" />
-
 
 
         <Button

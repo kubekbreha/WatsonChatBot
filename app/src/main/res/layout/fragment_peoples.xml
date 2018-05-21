@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/registerBackground"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:background="@color/registerBackground"
     android:orientation="vertical">
 
 
@@ -16,8 +16,8 @@
         android:layout_alignParentTop="true"
         android:background="@color/colorWhite"
         android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        android:focusableInTouchMode="true">
 
         <FrameLayout
             android:id="@+id/frag_peoples_top_layout"
@@ -43,6 +43,7 @@
             android:maxLines="1"
             android:paddingStart="12dp"
             android:shadowColor="@color/colorWhite"
+            android:singleLine="true"
             android:textColor="@color/colorBlack"
             android:textColorLink="@color/colorWhite" />
 

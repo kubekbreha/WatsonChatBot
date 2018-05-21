@@ -27,7 +27,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ffffff">
+            android:background="#ffffff"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
 
 
             <TextView
@@ -86,12 +88,16 @@
                 android:layout_marginTop="64dp"
                 android:background="@drawable/edit_rounded_search"
                 android:ems="10"
+                android:maxLines="1"
                 android:hint="username"
+                android:singleLine="true"
                 android:paddingStart="12dp"
                 android:shadowColor="@color/colorWhite"
                 android:textColor="@color/colorBlack"
                 android:textColorHint="@color/light_gray"
-                android:textColorLink="@color/colorWhite" />
+                android:textColorLink="@color/colorWhite"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"/>
 
 
             <EditText
@@ -104,13 +110,15 @@
                 android:paddingStart="12dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginTop="64dp"
-                android:background="@drawable/edit_rounded_search"
+                android:background="@drawable/edit_rounded_settings"
                 android:ems="10"
                 android:hint="description"
                 android:shadowColor="@color/colorWhite"
                 android:textColor="@color/colorBlack"
                 android:textColorHint="@color/light_gray"
-                android:textColorLink="@color/colorWhite" />
+                android:textColorLink="@color/colorWhite"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"/>
 
 
 
