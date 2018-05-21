@@ -16,15 +16,19 @@ object FirestoreUtil{
         throw NullPointerException("UID is null.")}")
 
 
-    fun initCurrentUserIfFirstTime(onComplete: () -> Unit){
+    fun initCurrentUserIfFirstTime(activity: Activity, onComplete: () -> Unit){
         currentUserDocRef.get().addOnSuccessListener { documentSnapshot ->
             if(!documentSnapshot.exists()){
                 val newUser = User(FirebaseAuth.getInstance().currentUser?.displayName ?: "",
                         "", null)
                 currentUserDocRef.set(newUser).addOnSuccessListener {
+//                    Toast.makeText(activity, "Data saved.",
+//                            Toast.LENGTH_SHORT).show()
                     onComplete()
                 }
             }else{
+//                Toast.makeText(activity, "Failed.",
+//                        Toast.LENGTH_SHORT).show()
                 onComplete()
             }
         }

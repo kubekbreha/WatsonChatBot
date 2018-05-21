@@ -3,16 +3,11 @@ package com.kubekbreha.watsonchatbot.authentication
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import android.support.v7.app.AppCompatActivity
-
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
+import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.ImageButton
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.R.id.act_settings_save
 import com.kubekbreha.watsonchatbot.authentication.glide.GlideApp
 import com.kubekbreha.watsonchatbot.authentication.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.authentication.util.StorageUtil

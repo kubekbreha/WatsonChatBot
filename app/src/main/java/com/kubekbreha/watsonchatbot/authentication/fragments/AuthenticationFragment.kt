@@ -135,7 +135,7 @@ class AuthenticationFragment : Fragment() {
             Log.i(TAG, "Firebase Authentication, is result a success? ${task.isSuccessful}.")
             if (task.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
-                FirestoreUtil.initCurrentUserIfFirstTime {
+                FirestoreUtil.initCurrentUserIfFirstTime(activity!!) {
                     startActivity(Intent(activity, MainActivity::class.java))
                     activity!!.finish()
                 }
