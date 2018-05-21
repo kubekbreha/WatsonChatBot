@@ -47,6 +47,10 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:3.3.1'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
 
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    kapt 'com.github.bumptech.glide:compiler:4.6.1'
+
     //google login
     implementation 'com.google.firebase:firebase-auth:15.1.0'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
@@ -55,6 +59,7 @@ dependencies {
     implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.21"
+
     kotlin {
         experimental {
             coroutines "enable"
@@ -63,3 +68,6 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+//kotlin annotation processor
+apply plugin: 'kotlin-kapt'
