@@ -25,6 +25,6 @@
     <color name="light_gray">#E0E0E0</color>
     <color name="lighter_gray">#efefef</color>
 
-
+    <color name="watson_background">#282F39</color>
 
 </resources>
