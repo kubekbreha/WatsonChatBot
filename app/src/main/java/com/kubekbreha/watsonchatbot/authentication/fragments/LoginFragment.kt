@@ -102,7 +102,7 @@ class LoginFragment : Fragment(){
         email = editEmail?.text.toString()
         password = editPassword?.text.toString()
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
-            mProgressBar!!.setMessage("Registering User...")
+            mProgressBar!!.setMessage("Singing user...")
             mProgressBar!!.show()
             Log.d(TAG, "Logging in user.")
             mAuth!!.signInWithEmailAndPassword(email!!, password!!)

@@ -19,6 +19,8 @@ import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
+import com.kubekbreha.watsonchatbot.authentication.SettingsActivity
+import com.kubekbreha.watsonchatbot.main.MainActivity
 import kotlin.math.log
 
 
@@ -62,7 +64,9 @@ class ProfileFragment : Fragment() {
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.settings -> {
-                        Toast.makeText(activity, "Settings clicked.", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(activity, SettingsActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)
                         true
                     }
                     R.id.help -> {

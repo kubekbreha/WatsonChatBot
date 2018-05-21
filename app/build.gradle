@@ -65,9 +65,11 @@ dependencies {
             coroutines "enable"
         }
     }
+
+    apply plugin: 'com.google.gms.google-services'
+
+    //kotlin annotation processor
+    apply plugin: 'kotlin-kapt'
 }
 
-apply plugin: 'com.google.gms.google-services'
 
-//kotlin annotation processor
-apply plugin: 'kotlin-kapt'

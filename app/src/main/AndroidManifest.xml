@@ -19,11 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".main.MainActivity"
+        <activity
+            android:name=".main.MainActivity"
             android:theme="@style/AppTheme.Base" />
-
-
+        <activity android:name=".authentication.SettingsActivity"></activity>
     </application>
 
 </manifest>
