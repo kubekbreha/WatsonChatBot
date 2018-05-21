@@ -1,5 +1,7 @@
 package com.kubekbreha.watsonchatbot.authentication.util
 
+import android.app.Activity
+import android.widget.Toast
 import com.kubekbreha.watsonchatbot.authentication.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
@@ -29,14 +31,20 @@ object FirestoreUtil{
     }
 
 
-    fun updateCurrentUser(name: String = "", bio: String = "", profilePicturePath: String? = null) {
+    fun updateCurrentUser(activity: Activity, name: String = "", bio: String = "", profilePicturePath: String? = null) {
         val userFieldMap = mutableMapOf<String, Any>()
         if(name.isNotBlank()) userFieldMap["name"] = name
         if(bio.isNotBlank()) userFieldMap["bio"] = bio
         if(profilePicturePath != null)
             userFieldMap["profilePicturePath"] = profilePicturePath
 
-        currentUserDocRef.update(userFieldMap)
+        currentUserDocRef.update(userFieldMap).addOnSuccessListener {
+            Toast.makeText(activity, "Data saved.",
+                    Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener{
+            Toast.makeText(activity, "Failed.",
+                    Toast.LENGTH_SHORT).show()
+        }
     }
 
 
