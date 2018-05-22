@@ -7,7 +7,7 @@ import com.kubekbreha.watsonchatbot.glide.GlideApp
 import com.kubekbreha.watsonchatbot.util.StorageUtil
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
-import kotlinx.android.synthetic.main.peoples_list_one_person.*
+import kotlinx.android.synthetic.main.item_one_person.*
 
 class PersonItem(
         val person: User,
@@ -29,7 +29,7 @@ class PersonItem(
         }
     }
 
-    override fun getLayout() = R.layout.peoples_list_one_person
+    override fun getLayout() = R.layout.item_one_person
 
 
 }
