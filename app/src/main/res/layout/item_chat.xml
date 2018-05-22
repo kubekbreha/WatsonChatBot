@@ -5,7 +5,7 @@
     android:layout_margin="8dp">
 
     <RelativeLayout
-        android:id="@+id/item_ch_root"
+        android:id="@+id/item_chat_root"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/item_atchat_time"
+            android:id="@+id/item_chat_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@id/item_chat_text"
