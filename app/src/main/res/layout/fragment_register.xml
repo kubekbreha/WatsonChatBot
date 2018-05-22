@@ -90,6 +90,7 @@
         android:background="@drawable/edit_rounded_dark"
         android:ems="10"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:maxLines="1"
         android:paddingStart="12dp"
         android:shadowColor="@color/colorWhite"
