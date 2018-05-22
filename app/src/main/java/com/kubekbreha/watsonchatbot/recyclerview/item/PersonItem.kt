@@ -1,4 +1,4 @@
-package com.kubekbreha.watsonchatbot.main.recyclerview.item
+package com.kubekbreha.watsonchatbot.recyclerview.item
 
 import com.kubekbreha.watsonchatbot.model.User
 import android.content.Context

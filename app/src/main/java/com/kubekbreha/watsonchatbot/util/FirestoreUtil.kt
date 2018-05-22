@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
-import com.kubekbreha.watsonchatbot.main.recyclerview.item.PersonItem
+import com.kubekbreha.watsonchatbot.recyclerview.item.PersonItem
 import com.xwray.groupie.kotlinandroidextensions.Item
 
 object FirestoreUtil{
