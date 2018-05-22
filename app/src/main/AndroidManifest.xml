@@ -22,7 +22,12 @@
         <activity
             android:name=".main.MainActivity"
             android:theme="@style/AppTheme.Base" />
-        <activity android:name=".authentication.SettingsActivity"></activity>
+        <activity android:name=".authentication.SettingsActivity" />
+        <activity android:name=".main.ChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".main.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
