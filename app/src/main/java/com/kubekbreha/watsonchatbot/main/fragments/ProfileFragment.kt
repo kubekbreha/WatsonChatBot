@@ -107,7 +107,6 @@ class ProfileFragment : Fragment() {
 
 
     private fun updateUI() {
-        Toast.makeText(activity, "You have been logged out", Toast.LENGTH_SHORT).show()
         val accountIntent = Intent(activity, AuthenticationActivity::class.java)
         startActivity(accountIntent)
         activity!!.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
