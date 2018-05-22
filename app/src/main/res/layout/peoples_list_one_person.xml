@@ -15,7 +15,7 @@
         android:src="@drawable/setup_profile"/>
 
     <TextView
-        android:id="@+id/peoples_list_one_person_text"
+        android:id="@+id/peoples_list_one_person_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
