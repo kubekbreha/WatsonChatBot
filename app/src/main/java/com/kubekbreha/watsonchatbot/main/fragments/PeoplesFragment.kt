@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.firebase.firestore.ListenerRegistration
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentication.util.FirestoreUtil
+import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Section

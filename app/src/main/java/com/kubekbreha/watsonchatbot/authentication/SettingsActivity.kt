@@ -8,9 +8,9 @@ import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentication.glide.GlideApp
-import com.kubekbreha.watsonchatbot.authentication.util.FirestoreUtil
-import com.kubekbreha.watsonchatbot.authentication.util.StorageUtil
+import com.kubekbreha.watsonchatbot.glide.GlideApp
+import com.kubekbreha.watsonchatbot.util.FirestoreUtil
+import com.kubekbreha.watsonchatbot.util.StorageUtil
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.io.ByteArrayOutputStream
 

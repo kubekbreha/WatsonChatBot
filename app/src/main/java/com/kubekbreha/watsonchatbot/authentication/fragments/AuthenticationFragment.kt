@@ -17,7 +17,7 @@ import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentication.util.FirestoreUtil
+import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
 

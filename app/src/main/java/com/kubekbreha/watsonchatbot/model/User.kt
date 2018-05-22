@@ -1,4 +1,4 @@
-package com.kubekbreha.watsonchatbot.authentication.model
+package com.kubekbreha.watsonchatbot.model
 
 data class User(val name: String,
                 val bio: String,

@@ -1,10 +1,10 @@
 package com.kubekbreha.watsonchatbot.main.recyclerview.item
 
-import com.kubekbreha.watsonchatbot.authentication.model.User
+import com.kubekbreha.watsonchatbot.model.User
 import android.content.Context
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentication.glide.GlideApp
-import com.kubekbreha.watsonchatbot.authentication.util.StorageUtil
+import com.kubekbreha.watsonchatbot.glide.GlideApp
+import com.kubekbreha.watsonchatbot.util.StorageUtil
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.peoples_list_one_person.*

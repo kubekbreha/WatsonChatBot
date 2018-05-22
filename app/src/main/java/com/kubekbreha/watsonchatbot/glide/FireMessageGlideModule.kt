@@ -1,4 +1,4 @@
-package com.kubekbreha.watsonchatbot.authentication.glide
+package com.kubekbreha.watsonchatbot.glide
 
 import android.content.Context
 import com.bumptech.glide.Glide

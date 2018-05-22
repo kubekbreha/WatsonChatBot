@@ -1,4 +1,4 @@
-package com.kubekbreha.watsonchatbot.authentication.util
+package com.kubekbreha.watsonchatbot.util
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage

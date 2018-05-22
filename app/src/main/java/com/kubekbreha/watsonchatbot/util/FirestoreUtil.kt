@@ -1,10 +1,10 @@
-package com.kubekbreha.watsonchatbot.authentication.util
+package com.kubekbreha.watsonchatbot.util
 
 import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.kubekbreha.watsonchatbot.authentication.model.User
+import com.kubekbreha.watsonchatbot.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
