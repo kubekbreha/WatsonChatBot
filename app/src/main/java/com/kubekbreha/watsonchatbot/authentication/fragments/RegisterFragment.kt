@@ -135,7 +135,7 @@ class RegisterFragment : Fragment() {
                             //update user profile information
                             //val currentUserDb = mDatabaseReference!!.child(userId)
                             //currentUserDb.child("userName").setValue(userName)
-                            FirestoreUtil.initCurrentUserIfFirstTime(activity!!) {
+                            FirestoreUtil.initCurrentUserIfFirstTime(activity!!, userName!!) {
                                 updateUserInfoAndUI()
                             }
                         } else {
@@ -224,7 +224,7 @@ class RegisterFragment : Fragment() {
             Log.i(TAG, "Firebase Authentication, is result a success? ${task.isSuccessful}.")
             if (task.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
-                FirestoreUtil.initCurrentUserIfFirstTime(activity!!) {
+                FirestoreUtil.initCurrentUserIfFirstTime(activity!!, "") {
                     startActivity(Intent(activity, MainActivity::class.java))
                     activity!!.finish()
                 }
