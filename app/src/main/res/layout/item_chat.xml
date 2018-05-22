@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:id="@+id/item_ch_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/message_me"
+        android:maxWidth="250dp">
+
+        <TextView
+            android:id="@+id/item_chat_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:maxWidth="250dp"
+            android:minWidth="120dp"
+            android:paddingEnd="24dp"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:text="Hello my friend"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_atchat_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/item_chat_text"
+            android:layout_below="@id/item_chat_text"
+            android:maxWidth="250dp"
+            android:paddingBottom="4dp"
+            android:text="2017"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

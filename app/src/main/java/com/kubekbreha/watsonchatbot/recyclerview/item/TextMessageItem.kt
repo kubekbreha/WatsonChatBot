@@ -14,6 +14,6 @@ class TextMessageItem(val message: TextMessage,
         //TODO: Placeholder bind
     }
 
-    override fun getLayout() = R.layout.item_text_message
+    override fun getLayout() = R.layout.item_chat
 
 }
