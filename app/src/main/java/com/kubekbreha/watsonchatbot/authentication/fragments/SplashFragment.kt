@@ -15,7 +15,6 @@ class SplashFragment : Fragment() {
 
     private var mAuth: FirebaseAuth? = null
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
@@ -26,13 +25,12 @@ class SplashFragment : Fragment() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
             activity!!.finish()
-        }else{
+        } else {
             val newFragment = AuthenticationFragment()
             val transaction = fragmentManager!!.beginTransaction()
             transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
             transaction.commit()
         }
-
 
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }

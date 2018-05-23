@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.view.WindowManager
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.glide.GlideApp
@@ -14,7 +15,7 @@ import com.kubekbreha.watsonchatbot.util.StorageUtil
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.io.ByteArrayOutputStream
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity(), View.OnClickListener {
 
     private val RC_SELECT_IMAGE = 2
     private lateinit var selectedImageBytes: ByteArray
@@ -26,34 +27,43 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         //show transparent activity tab
-        val w = window // in Activity's onCreate() for instance
+        val w = window
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
-        act_settings_btn_back_from_login.setOnClickListener {
-            onBackPressed()
-        }
+        act_settings_btn_back_from_login.setOnClickListener(this)
+        act_settings_profile_photo.setOnClickListener(this)
+        act_settings_save.setOnClickListener(this)
+    }
 
-
-        act_settings_profile_photo.setOnClickListener {
-            val intent = Intent().apply {
-                type = "image/*"
-                action = Intent.ACTION_GET_CONTENT
-                putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/jpeg", "image/png"))
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.act_settings_btn_back_from_login -> {
+                onBackPressed()
             }
-            startActivityForResult(Intent.createChooser(intent, "Select Image"), RC_SELECT_IMAGE)
-        }
 
-        act_settings_save.setOnClickListener {
-            if (::selectedImageBytes.isInitialized) {
-                StorageUtil.uploadProfilePhoto(selectedImageBytes) { imagePath ->
-                    FirestoreUtil.updateCurrentUser(this, act_settings_user_name.text.toString(),
-                            act_settings_user_description.text.toString(), imagePath)
+            R.id.act_settings_profile_photo -> {
+                val intent = Intent().apply {
+                    type = "image/*"
+                    action = Intent.ACTION_GET_CONTENT
+                    putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/jpeg", "image/png"))
                 }
-            } else {
-                FirestoreUtil.updateCurrentUser(this, act_settings_user_name.text.toString(),
-                        act_settings_user_description.text.toString(), null)
+                startActivityForResult(Intent.createChooser(intent, "Select Image"), RC_SELECT_IMAGE)
             }
 
+            R.id.act_settings_save -> {
+                if (::selectedImageBytes.isInitialized) {
+                    StorageUtil.uploadProfilePhoto(selectedImageBytes) { imagePath ->
+                        FirestoreUtil.updateCurrentUser(this, act_settings_user_name.text.toString(),
+                                act_settings_user_description.text.toString(), imagePath)
+                    }
+                } else {
+                    FirestoreUtil.updateCurrentUser(this, act_settings_user_name.text.toString(),
+                            act_settings_user_description.text.toString(), null)
+                }
+            }
+
+            else -> {
+            }
         }
     }
 

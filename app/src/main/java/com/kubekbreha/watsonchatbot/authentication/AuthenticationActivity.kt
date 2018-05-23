@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
-import com.google.firebase.auth.FirebaseAuth
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.authentication.fragments.SplashFragment
 
@@ -20,7 +19,7 @@ class AuthenticationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_authentication)
 
         //show transparent activity tab
-        val w = window // in Activity's onCreate() for instance
+        val w = window
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         val splash = SplashFragment()

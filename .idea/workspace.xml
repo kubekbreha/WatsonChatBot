@@ -14,7 +14,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d83a5b8d-5f82-4dbb-b281-975ec762a38d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/RegisterFragment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/RegisterFragment.kt" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/AuthenticationActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/AuthenticationActivity.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/SettingsActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/SettingsActivity.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/ForgotFragment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/ForgotFragment.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/LoginFragment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/LoginFragment.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/SplashFragment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/SplashFragment.kt" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/sessions/kotlin-compiler-.salive" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,40 +60,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthenticationFragment.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/AuthenticationFragment.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="804">
-              <caret line="103" column="9" lean-forward="false" selection-start-line="75" selection-start-column="8" selection-end-line="103" selection-end-column="9" />
-              <folding>
-                <element signature="e#64#804#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginFragment.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/LoginFragment.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="111" column="9" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="111" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterFragment.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/RegisterFragment.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
-              <caret line="171" column="9" lean-forward="false" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,6 +98,7 @@
       <find>act_settings_user_credentials_username</find>
       <find>user</find>
       <find>firestoreInstance</find>
+      <find>setOnClickListener</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2335,7 +2317,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_watson.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/main/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/SplashFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/model/User.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/button_rounded_primary_dark.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/edit_rounded_settings.xml" />
@@ -2345,7 +2326,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/glide/GlideModule.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/glide/FireMessageGlideModule.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/SettingsActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/peoples_list_one_person.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/main/recyclerview/item/PersonItem.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_peoples.xml" />
@@ -2367,14 +2347,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/util/FirestoreUtil.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/recyclerview/item/TextMessageItem.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_authentication.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/AuthenticationActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_authentification.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/main/ChatActivity.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/AuthenticationFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/ForgotFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/LoginFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/RegisterFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/SplashFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/LoginFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/ForgotFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/SettingsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/AuthenticationActivity.kt" />
       </list>
     </option>
   </component>
@@ -2665,7 +2647,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2682,7 +2663,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1990232" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1990232" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24974412" sideWeight="0.6739927" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2775,13 +2756,6 @@
         <state relative-caret-position="195">
           <caret line="13" column="44" lean-forward="false" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/SplashFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="31" lean-forward="false" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -3079,14 +3053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/AuthenticationActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/main/ChatActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -3114,45 +3080,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/SettingsActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/SplashFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="45" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/ForgotFragment.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/RegisterFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="43" column="40" lean-forward="true" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        <state relative-caret-position="731">
+          <caret line="128" column="9" lean-forward="false" selection-start-line="107" selection-start-column="6" selection-end-line="128" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/LoginFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="111" column="9" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="111" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#64#496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/ForgotFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#64#580#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/AuthenticationFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="103" column="9" lean-forward="false" selection-start-line="75" selection-start-column="8" selection-end-line="103" selection-end-column="9" />
+        <state relative-caret-position="135">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/AuthenticationActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#64#804#0" expanded="true" />
+            <element signature="e#53#386#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/fragments/RegisterFragment.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kubekbreha/watsonchatbot/authentication/SettingsActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="171" column="9" lean-forward="false" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="780">
+          <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+          <folding>
+            <element signature="e#53#600#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -11,9 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.google.android.gms.auth.api.Auth
 import com.google.firebase.auth.FirebaseAuth
-
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
