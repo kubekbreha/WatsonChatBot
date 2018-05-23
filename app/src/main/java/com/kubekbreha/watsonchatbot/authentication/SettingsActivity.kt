@@ -30,9 +30,6 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var selectedImageBytes: ByteArray
     private var pictureJustChanged = false
 
-    private var mImageUri: Uri? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
@@ -61,12 +58,10 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.frag_login_btn_login -> {
-//                val intent = Intent().apply {
-//                    type = "image/*"
-//                    action = Intent.ACTION_GET_CONTENT
-//                    putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/jpeg", "image/png"))
-//                }
-//                startActivityForResult(Intent.createChooser(intent, "Select Image"), RC_SELECT_IMAGE)
+                val galleryIntent = Intent()
+                galleryIntent.action = Intent.ACTION_GET_CONTENT
+                galleryIntent.type = "image/*"
+                startActivityForResult(galleryIntent, GALLERY_REQUEST)
             }
 
             R.id.act_settings_save -> {
@@ -87,12 +82,10 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == GALLERY_REQUEST && resultCode == Activity.RESULT_OK) {
-
             val imageUri = data.data
 
             CropImage.activity(imageUri)
@@ -105,22 +98,20 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             val result = CropImage.getActivityResult(data)
             if (resultCode == Activity.RESULT_OK) {
-                mImageUri = result.uri
-
-
 
                 val selectedImageBmp = MediaStore.Images.Media
-                        .getBitmap(contentResolver, mImageUri)
+                        .getBitmap(contentResolver, result.uri)
 
                 val outputStream = ByteArrayOutputStream()
                 selectedImageBmp.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
                 selectedImageBytes = outputStream.toByteArray()
 
 
-                act_settings_profile_photo.setImageURI(mImageUri)
+                act_settings_profile_photo.setImageURI(result.uri)
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 val error = result.error
             }
+
             pictureJustChanged = true
         }
     }
