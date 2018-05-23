@@ -21,8 +21,7 @@ import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
 
-class AuthenticationFragment : Fragment() {
-
+class AuthenticationFragment : Fragment(), View.OnClickListener {
 
     private var TAG : String = "AuthenticationFragment"
 
@@ -67,28 +66,42 @@ class AuthenticationFragment : Fragment() {
         btnSignUp = view.findViewById<View>(R.id.frag_authentication_sign_up_with_email) as Button
         btnGoogle = view.findViewById<View>(R.id.frag_authentication_btn_google_sign_in) as Button
 
-        btnLogIn!!.setOnClickListener{
-            val transaction = fragmentManager!!.beginTransaction()
-            transaction.addToBackStack(null)
+        btnLogIn!!.setOnClickListener(this)
+        btnSignUp!!.setOnClickListener(this)
+        btnGoogle!!.setOnClickListener ( this )
 
-            val newFragment = LoginFragment()
+    }
 
-            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
-            transaction.commit()
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.frag_authentication_login -> {
+                val transaction = fragmentManager!!.beginTransaction()
+                transaction.addToBackStack(null)
+
+                val newFragment = LoginFragment()
+
+                transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+                transaction.commit()
+            }
+            R.id.frag_authentication_sign_up_with_email -> {
+
+                val transaction = fragmentManager!!.beginTransaction()
+                transaction.addToBackStack(null)
+
+                val newFragment = RegisterFragment()
+
+                transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+                transaction.commit()
+            }
+            R.id.frag_authentication_btn_google_sign_in -> {
+                Log.i(TAG, "Starting Google LogIn Flow.")
+                val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
+                startActivityForResult(signInIntent, GOOGLE_LOG_IN_RC)
+            }
+
+            else -> {
+            }
         }
-
-        btnSignUp!!.setOnClickListener{
-
-            val transaction = fragmentManager!!.beginTransaction()
-            transaction.addToBackStack(null)
-
-            val newFragment = RegisterFragment()
-
-            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
-            transaction.commit()
-        }
-
-        btnGoogle!!.setOnClickListener { googleButtonOnClick() }
 
     }
 
@@ -97,17 +110,6 @@ class AuthenticationFragment : Fragment() {
         super.onPause()
         googleApiClient!!.stopAutoManage(activity!!)
         googleApiClient!!.disconnect()
-    }
-
-    fun googleButtonOnClick() {
-        Log.i(TAG, "Trying to login via google.")
-        googleLogin()
-    }
-
-    private fun googleLogin() {
-        Log.i(TAG, "Starting Google LogIn Flow.")
-        val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
-        startActivityForResult(signInIntent, GOOGLE_LOG_IN_RC)
     }
 
 

@@ -15,9 +15,6 @@ class AuthenticationActivity : AppCompatActivity() {
 
     private val TAG = "AuthenticationActivity"
 
-    //Firebase references
-    private var mAuth: FirebaseAuth? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authentication)
@@ -28,7 +25,6 @@ class AuthenticationActivity : AppCompatActivity() {
 
         val splash = SplashFragment()
         addFragment(splash, R.id.act_authentication_authentication_frame)
-
     }
 
 
@@ -44,7 +40,7 @@ class AuthenticationActivity : AppCompatActivity() {
     }
 
 
-    fun  AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) {
+    fun AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) {
         supportFragmentManager.inTransaction { add(frameId, fragment) }
     }
 

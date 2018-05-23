@@ -7,12 +7,9 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".authentication.AuthenticationActivity">
 
-
     <FrameLayout
         android:id="@+id/act_authentication_authentication_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
