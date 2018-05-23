@@ -13,13 +13,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
+import com.google.android.gms.auth.api.Auth
 import com.google.firebase.auth.FirebaseAuth
 
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
 
 
-class ForgotFragment : Fragment() {
+class ForgotFragment : Fragment(), View.OnClickListener {
 
     private val TAG = "ForgotPasswordFragment"
 
@@ -30,7 +31,6 @@ class ForgotFragment : Fragment() {
 
     //Firebase references
     private var mAuth: FirebaseAuth? = null
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -46,10 +46,24 @@ class ForgotFragment : Fragment() {
         btnSubmit = view.findViewById<View>(R.id.frag_forgot_btn_submit) as Button
         btnBack = view.findViewById<View>(R.id.frag_forgot_btn_back_from_forgot) as ImageButton
         mAuth = FirebaseAuth.getInstance()
-        btnSubmit!!.setOnClickListener { sendPasswordResetEmail() }
-        btnBack!!.setOnClickListener{ activity!!.onBackPressed() }
+
+        btnSubmit!!.setOnClickListener(this)
+        btnBack!!.setOnClickListener(this)
     }
 
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.frag_forgot_btn_submit -> {
+                sendPasswordResetEmail()
+            }
+            R.id.frag_forgot_btn_back_from_forgot -> {
+                activity!!.onBackPressed()
+            }
+
+            else -> {
+            }
+        }
+    }
 
     private fun sendPasswordResetEmail() {
         val email = etEmail?.text.toString()

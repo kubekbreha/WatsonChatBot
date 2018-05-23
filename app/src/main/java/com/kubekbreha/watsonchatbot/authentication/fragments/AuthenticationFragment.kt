@@ -102,7 +102,6 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
             else -> {
             }
         }
-
     }
 
 
