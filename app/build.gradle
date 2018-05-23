@@ -62,6 +62,10 @@ dependencies {
     //vaves
     implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
 
+    //cropper
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+
+
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.21"
 
     kotlin {

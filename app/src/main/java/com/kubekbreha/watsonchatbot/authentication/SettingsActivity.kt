@@ -3,23 +3,34 @@ package com.kubekbreha.watsonchatbot.authentication
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.WindowManager
+import android.widget.Toast
 import com.kubekbreha.watsonchatbot.R
+import com.kubekbreha.watsonchatbot.R.id.act_settings_user_description
+import com.kubekbreha.watsonchatbot.R.id.act_settings_user_name
 import com.kubekbreha.watsonchatbot.glide.GlideApp
 import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.util.StorageUtil
+import com.theartofdev.edmodo.cropper.CropImage
+import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.io.ByteArrayOutputStream
+import java.io.File
 
 class SettingsActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val RC_SELECT_IMAGE = 2
+    private val GALLERY_REQUEST = 1
     private lateinit var selectedImageBytes: ByteArray
     private var pictureJustChanged = false
+
+    private var mImageUri: Uri? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +44,7 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
         act_settings_btn_back_from_login.setOnClickListener(this)
         act_settings_profile_photo.setOnClickListener(this)
         act_settings_save.setOnClickListener(this)
+        frag_login_btn_login.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -42,12 +54,19 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.act_settings_profile_photo -> {
-                val intent = Intent().apply {
-                    type = "image/*"
-                    action = Intent.ACTION_GET_CONTENT
-                    putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/jpeg", "image/png"))
-                }
-                startActivityForResult(Intent.createChooser(intent, "Select Image"), RC_SELECT_IMAGE)
+                val galleryIntent = Intent()
+                galleryIntent.action = Intent.ACTION_GET_CONTENT
+                galleryIntent.type = "image/*"
+                startActivityForResult(galleryIntent, GALLERY_REQUEST)
+            }
+
+            R.id.frag_login_btn_login -> {
+//                val intent = Intent().apply {
+//                    type = "image/*"
+//                    action = Intent.ACTION_GET_CONTENT
+//                    putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/jpeg", "image/png"))
+//                }
+//                startActivityForResult(Intent.createChooser(intent, "Select Image"), RC_SELECT_IMAGE)
             }
 
             R.id.act_settings_save -> {
@@ -68,21 +87,40 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == RC_SELECT_IMAGE && resultCode == Activity.RESULT_OK &&
-                data != null && data.data != null) {
-            val selectedImagePath = data.data
-            val selectedImageBmp = MediaStore.Images.Media
-                    .getBitmap(contentResolver, selectedImagePath)
 
-            val outputStream = ByteArrayOutputStream()
-            selectedImageBmp.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
-            selectedImageBytes = outputStream.toByteArray()
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        super.onActivityResult(requestCode, resultCode, data)
 
-            GlideApp.with(this)
-                    .load(selectedImageBytes)
-                    .into(act_settings_profile_photo)
+        if (requestCode == GALLERY_REQUEST && resultCode == Activity.RESULT_OK) {
 
+            val imageUri = data.data
+
+            CropImage.activity(imageUri)
+                    .setAspectRatio(1, 1)
+                    .setGuidelines(CropImageView.Guidelines.ON)
+                    .setCropShape(CropImageView.CropShape.RECTANGLE)
+                    .start(this)
+        }
+
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            val result = CropImage.getActivityResult(data)
+            if (resultCode == Activity.RESULT_OK) {
+                mImageUri = result.uri
+
+
+
+                val selectedImageBmp = MediaStore.Images.Media
+                        .getBitmap(contentResolver, mImageUri)
+
+                val outputStream = ByteArrayOutputStream()
+                selectedImageBmp.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
+                selectedImageBytes = outputStream.toByteArray()
+
+
+                act_settings_profile_photo.setImageURI(mImageUri)
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                val error = result.error
+            }
             pictureJustChanged = true
         }
     }
