@@ -120,8 +120,8 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onStart() {
         super.onStart()
         FirestoreUtil.getCurrentUser { user ->
-            act_settings_user_name.setHint(user.name)
-            act_settings_user_description.setHint(user.bio)
+            act_settings_user_name.setText(user.name)
+            act_settings_user_description.setText(user.bio)
             if (!pictureJustChanged && user.profilePicturePath != null)
                 GlideApp.with(this)
                         .load(StorageUtil.pathToReference(user.profilePicturePath))
