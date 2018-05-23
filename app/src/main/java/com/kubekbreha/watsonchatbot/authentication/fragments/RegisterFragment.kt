@@ -27,8 +27,7 @@ import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
-class RegisterFragment : Fragment() {
-
+class RegisterFragment : Fragment(), View.OnClickListener {
 
     private val TAG = "RegisterActivity"
 
@@ -97,17 +96,39 @@ class RegisterFragment : Fragment() {
         mDatabase = FirebaseDatabase.getInstance()
         //mDatabaseReference = mDatabase!!.reference!!.child("Users")
 
-        btnCreateAccount!!.setOnClickListener { createNewAccount() }
-        btnBack!!.setOnClickListener { activity!!.onBackPressed() }
-
+        btnCreateAccount!!.setOnClickListener(this)
+        btnBack!!.setOnClickListener(this)
         //google login
-        btnGoogle!!.setOnClickListener { googleButtonOnClick() }
+        btnGoogle!!.setOnClickListener(this)
+        btnFacebook!!.setOnClickListener(this)
+    }
 
-        btnFacebook!!.setOnClickListener {
-            Toast.makeText(activity, "Not implemented yet.",
-                    Toast.LENGTH_SHORT).show()
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.frag_register_btn_register -> {
+                createNewAccount()
+            }
+
+            R.id.frag_register_btn_back_from_register -> {
+                activity!!.onBackPressed()
+            }
+
+            R.id.frag_register_register_button_google -> {
+                Log.i(TAG, "Trying to login via google.")
+                googleLogin()
+            }
+
+            R.id.frag_register_register_button_facebook -> {
+                Toast.makeText(activity, "Not implemented yet.",
+                        Toast.LENGTH_SHORT).show()
+            }
+
+            else -> {
+            }
         }
     }
+
 
     private fun createNewAccount() {
 
@@ -149,14 +170,6 @@ class RegisterFragment : Fragment() {
         } else {
             Toast.makeText(activity, "Enter all details", Toast.LENGTH_SHORT).show()
         }
-
-    }
-
-
-    fun googleButtonOnClick() {
-        Log.i(TAG, "Trying to login via google.")
-        googleLogin()
-
     }
 
 
