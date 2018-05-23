@@ -11,13 +11,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.google.android.gms.auth.api.Auth
 import com.google.firebase.auth.FirebaseAuth
 
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.main.MainActivity
 
 
-class LoginFragment : Fragment(){
+class LoginFragment : Fragment(), View.OnClickListener {
 
     private var TAG: String = "LoginFragment"
 
@@ -51,7 +52,6 @@ class LoginFragment : Fragment(){
         goToSignUp = view.findViewById<View>(R.id.frag_login_goto_sign_up) as RelativeLayout
         btnTextGoToSignUp = view.findViewById<View>(R.id.frag_login_goto_signin_text) as Button
         btntGoToSignUp = view.findViewById<View>(R.id.frag_login_goto_signin_button) as Button
-
         textForgotPassword = view.findViewById<View>(R.id.frag_login_forgot) as TextView
         editEmail = view.findViewById<View>(R.id.frag_login_edit_email) as EditText
         editPassword = view.findViewById<View>(R.id.frag_login_edit_password) as EditText
@@ -60,41 +60,56 @@ class LoginFragment : Fragment(){
         mProgressBar = ProgressDialog(activity!!)
         mAuth = FirebaseAuth.getInstance()
 
-        textForgotPassword!!.setOnClickListener {
-            val newFragment = ForgotFragment()
-            val transaction = fragmentManager!!.beginTransaction()
+        textForgotPassword!!.setOnClickListener(this)
+        btnTextGoToSignUp!!.setOnClickListener(this)
+        btntGoToSignUp!!.setOnClickListener(this)
+        btnLogin!!.setOnClickListener(this)
+        btnBack!!.setOnClickListener(this)
+    }
 
-            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
-            transaction.addToBackStack(null)
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.frag_login_forgot -> {
+                val newFragment = ForgotFragment()
+                val transaction = fragmentManager!!.beginTransaction()
 
-            transaction.commit()
+                transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+                transaction.addToBackStack(null)
+
+                transaction.commit()
+            }
+
+            R.id.frag_login_goto_signin_button -> {
+                val newFragment = RegisterFragment()
+                val transaction = fragmentManager!!.beginTransaction()
+
+                transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+                transaction.addToBackStack(null)
+
+                transaction.commit()
+            }
+
+            R.id.frag_login_goto_signin_text -> {
+                val newFragment = RegisterFragment()
+                val transaction = fragmentManager!!.beginTransaction()
+
+                transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+                transaction.addToBackStack(null)
+
+                transaction.commit()
+            }
+
+            R.id.frag_login_btn_login -> {
+                loginUser()
+            }
+
+            R.id.frag_login_btn_back_from_login -> {
+                activity!!.onBackPressed()
+            }
+
+            else -> {
+            }
         }
-
-        btnTextGoToSignUp!!.setOnClickListener{
-
-            val newFragment = RegisterFragment()
-            val transaction = fragmentManager!!.beginTransaction()
-
-            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
-            transaction.addToBackStack(null)
-
-            transaction.commit()
-        }
-
-        btntGoToSignUp!!.setOnClickListener{
-
-            val newFragment = RegisterFragment()
-            val transaction = fragmentManager!!.beginTransaction()
-
-            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
-            transaction.addToBackStack(null)
-
-            transaction.commit()
-        }
-
-        btnLogin!!.setOnClickListener { loginUser() }
-
-        btnBack!!.setOnClickListener { activity!!.onBackPressed() }
     }
 
 
