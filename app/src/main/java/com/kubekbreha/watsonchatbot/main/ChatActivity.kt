@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.WindowManager
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ListenerRegistration
 import com.kubekbreha.watsonchatbot.AppConstants
@@ -30,9 +29,6 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
-        //show transparent activity tab
-        val w = window // in Activity's onCreate() for instance
-        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         act_chat_chatting_with?.text = intent.getStringExtra(AppConstants.USER_NAME)
@@ -51,9 +47,9 @@ class ChatActivity : AppCompatActivity() {
                 FirestoreUtil.sendMessage(messageToSend, channelId)
             }
 
-            act_chat_add_image.setOnClickListener {
-                //TODO: Send image messages
-            }
+//            act_chat_add_image.setOnClickListener {
+//                //TODO: Send image messages
+//            }
         }
 
     }

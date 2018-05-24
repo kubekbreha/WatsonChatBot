@@ -2,7 +2,7 @@ package com.example.bottomnavigation.helper
 
 import android.support.v4.app.Fragment
 import com.example.bottomnavigation.ui.WatsonFragment
-import com.example.bottomnavigation.ui.PeoplesFragment
+import com.kubekbreha.watsonchatbot.main.fragments.PeoplesFragment
 import com.example.bottomnavigation.ui.ProfileFragment
 import com.kubekbreha.watsonchatbot.R
 

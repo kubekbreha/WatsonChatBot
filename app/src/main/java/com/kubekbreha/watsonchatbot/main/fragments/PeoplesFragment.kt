@@ -1,4 +1,4 @@
-package com.example.bottomnavigation.ui
+package com.kubekbreha.watsonchatbot.main.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import com.google.firebase.firestore.ListenerRegistration
 import com.kubekbreha.watsonchatbot.AppConstants
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
 import com.kubekbreha.watsonchatbot.main.ChatActivity
 import com.kubekbreha.watsonchatbot.recyclerview.item.PersonItem
 import com.kubekbreha.watsonchatbot.util.FirestoreUtil

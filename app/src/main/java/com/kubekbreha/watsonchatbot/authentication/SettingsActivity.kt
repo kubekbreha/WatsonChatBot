@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
@@ -23,6 +25,15 @@ import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.io.ByteArrayOutputStream
 import java.io.File
+import android.view.MotionEvent
+import android.graphics.drawable.ColorDrawable
+import android.graphics.Color.parseColor
+
+
+
+
+
+
 
 class SettingsActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -34,14 +45,13 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        //show transparent activity tab
-        val w = window
-        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         act_settings_btn_back_from_login.setOnClickListener(this)
         act_settings_profile_photo.setOnClickListener(this)
         act_settings_save.setOnClickListener(this)
         frag_login_btn_login.setOnClickListener(this)
+
+
     }
 
     override fun onClick(v: View?) {
