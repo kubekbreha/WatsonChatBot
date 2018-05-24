@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,188 +8,188 @@
     android:isScrollContainer="true"
     tools:context=".authentication.SettingsActivity">
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:background="#000000"
-        android:padding="0dp"
-        android:stretchColumns="*">
 
-        <FrameLayout
-            android:id="@+id/act_settings_toolbar"
+    <FrameLayout
+        android:id="@+id/act_settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorWhite"
+        android:descendantFocusability="beforeDescendants"
+        android:elevation="4dp"
+        android:focusableInTouchMode="true">
+
+
+        <ImageButton
+            android:id="@+id/act_settings_btn_back_from_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_arrow_back" />
+
+        <Button
+            android:id="@+id/act_settings_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="0dp"
+            android:background="@color/transparent"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/act_settings_scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/act_settings_toolbar"
+        android:layout_marginTop="56dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/act_settings_toolbar">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_alignParentTop="true"
-            android:background="@color/colorWhite"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
             android:descendantFocusability="beforeDescendants"
-            android:elevation="4dp"
             android:focusableInTouchMode="true">
 
 
-            <ImageButton
-                android:id="@+id/act_settings_btn_back_from_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/transparent"
-                android:src="@drawable/ic_arrow_back" />
-
-            <Button
-                android:id="@+id/act_settings_save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="0dp"
-                android:background="@color/transparent"
-                android:text="Save"
-                android:textAllCaps="false"
-                android:textStyle="bold" />
-
-        </FrameLayout>
-
-
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/act_settings_scroll_view"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@+id/act_settings_toolbar"
-            android:fillViewport="true">
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/act_settings_profile_photo_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffffff"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:text="Profile photo"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/act_settings_profile_photo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@id/act_settings_profile_photo_text"
+                android:layout_margin="24dp"
+                android:src="@drawable/setup_profile" />
+
+            <Button
+                android:id="@+id/frag_login_btn_login"
+                android:layout_width="234dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/act_settings_profile_photo_text"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/button_rounded_primary_dark"
+                android:text="Change photo"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/act_settings_user_credentials_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/act_settings_profile_photo"
+                android:layout_margin="8dp"
+                android:paddingStart="16dp"
+                android:text="User info"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/act_settings_user_credentials_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/act_settings_user_credentials_text"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:paddingStart="16dp"
+                android:text="Username"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+
+            <EditText
+                android:id="@+id/act_settings_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/act_settings_user_credentials_text"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="56dp"
+                android:background="@drawable/edit_rounded_search"
                 android:descendantFocusability="beforeDescendants"
-                android:focusableInTouchMode="true">
+                android:ems="10"
+                android:focusableInTouchMode="true"
+                android:imeOptions="actionSend|flagNoEnterAction"
+                android:isScrollContainer="true"
+                android:maxLines="1"
+                android:paddingStart="12dp"
+                android:shadowColor="@color/colorWhite"
+                android:singleLine="true"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/light_gray"
+                android:textColorLink="@color/colorWhite"
+                android:windowSoftInputMode="adjustPan" />
+
+            <TextView
+                android:id="@+id/act_settings_user_credentials_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/act_settings_user_name"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:text="Description"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/act_settings_user_description"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/act_settings_user_credentials_description"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/edit_rounded_settings"
+                android:descendantFocusability="beforeDescendants"
+                android:ems="10"
+                android:focusableInTouchMode="true"
+                android:gravity="top|left"
+                android:imeOptions="actionSend|flagNoEnterAction"
+                android:isScrollContainer="true"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:shadowColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/light_gray"
+                android:textColorLink="@color/colorWhite"
+                android:windowSoftInputMode="adjustPan" />
 
 
-                <TextView
-                    android:id="@+id/act_settings_profile_photo_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="16dp"
-                    android:text="Profile photo"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+        </RelativeLayout>
 
-                <ImageView
-                    android:id="@+id/act_settings_profile_photo"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_below="@id/act_settings_profile_photo_text"
-                    android:layout_margin="24dp"
-                    android:src="@drawable/setup_profile" />
-
-                <Button
-                    android:id="@+id/frag_login_btn_login"
-                    android:layout_width="234dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@id/act_settings_profile_photo_text"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginStart="160dp"
-                    android:layout_marginTop="60dp"
-                    android:background="@drawable/button_rounded_primary_dark"
-                    android:text="Change photo"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorWhite"
-                    android:textStyle="bold" />
+    </ScrollView>
 
 
-                <TextView
-                    android:id="@+id/act_settings_user_credentials_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/act_settings_profile_photo"
-                    android:layout_margin="8dp"
-                    android:paddingStart="16dp"
-                    android:text="User info"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/act_settings_user_credentials_username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/act_settings_user_credentials_text"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginStart="8dp"
-                    android:paddingStart="16dp"
-                    android:text="Username"
-                    android:textColor="@color/gray"
-                    android:textSize="14sp" />
-
-
-                <EditText
-                    android:id="@+id/act_settings_user_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignTop="@+id/act_settings_user_credentials_text"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_marginTop="56dp"
-                    android:background="@drawable/edit_rounded_search"
-                    android:descendantFocusability="beforeDescendants"
-                    android:ems="10"
-                    android:focusableInTouchMode="true"
-                    android:imeOptions="actionSend|flagNoEnterAction"
-                    android:isScrollContainer="true"
-                    android:maxLines="1"
-                    android:paddingStart="12dp"
-                    android:shadowColor="@color/colorWhite"
-                    android:singleLine="true"
-                    android:textColor="@color/colorBlack"
-                    android:textColorHint="@color/light_gray"
-                    android:textColorLink="@color/colorWhite"
-                    android:windowSoftInputMode="adjustPan" />
-
-                <TextView
-                    android:id="@+id/act_settings_user_credentials_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/act_settings_user_name"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="16dp"
-                    android:text="Description"
-                    android:textColor="@color/gray"
-                    android:textSize="14sp" />
-
-                <EditText
-                    android:id="@+id/act_settings_user_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignTop="@+id/act_settings_user_credentials_description"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_marginTop="24dp"
-                    android:background="@drawable/edit_rounded_settings"
-                    android:descendantFocusability="beforeDescendants"
-                    android:ems="10"
-                    android:focusableInTouchMode="true"
-                    android:imeOptions="actionSend|flagNoEnterAction"
-                    android:isScrollContainer="true"
-                    android:paddingStart="12dp"
-                    android:shadowColor="@color/colorWhite"
-                    android:textColor="@color/colorBlack"
-                    android:textColorHint="@color/light_gray"
-                    android:textColorLink="@color/colorWhite"
-                    android:windowSoftInputMode="adjustPan" />
-
-
-            </RelativeLayout>
-
-        </ScrollView>
-
-    </TableLayout>
-
-</ScrollView>
+</android.support.constraint.ConstraintLayout>
