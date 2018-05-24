@@ -14,8 +14,8 @@
         android:id="@+id/peoples_list_one_person_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
         android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
         android:src="@drawable/setup_profile"
         app:civ_border_width="0dp" />
 
@@ -25,10 +25,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="12dp"
-        android:text="TextView"
+        android:layout_marginTop="8dp"
         android:textColor="@color/colorBlack"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textStyle="bold" />
 
     <TextView
@@ -36,10 +35,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="42dp"
-        android:text="TextView"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/gray"
+        android:textSize="14dp" />
+
+
+    <TextView
+        android:id="@+id/peoples_list_one_person_last_message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="00:00"
         android:textColor="@color/colorBlack"
-        android:textSize="16dp" />
+        android:textSize="14dp" />
 
 
 </RelativeLayout>
