@@ -3,6 +3,7 @@ package com.kubekbreha.watsonchatbot.main
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import android.view.WindowManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ListenerRegistration
@@ -19,7 +20,8 @@ import kotlinx.android.synthetic.main.activity_chat.*
 import java.util.*
 
 
-class ChatActivity : AppCompatActivity() {
+class ChatActivity : AppCompatActivity(), View.OnClickListener {
+
 
     private var shouldInitRecyclerView = true
     private lateinit var messagesSection: Section
@@ -52,7 +54,22 @@ class ChatActivity : AppCompatActivity() {
 //            }
         }
 
+        act_chat_btn_back_from_login.setOnClickListener(this)
+
     }
+
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.act_chat_btn_back_from_login -> {
+                onBackPressed()
+            }
+
+            else -> {
+            }
+        }
+    }
+
 
     private fun updateRecyclerView(messages: List<Item>) {
         fun init() {
