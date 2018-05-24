@@ -3,20 +3,13 @@ package com.kubekbreha.watsonchatbot.authentication
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
 import android.provider.MediaStore
-import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
-import android.view.WindowManager
-import android.widget.Toast
 import com.kubekbreha.watsonchatbot.R
-import com.kubekbreha.watsonchatbot.R.id.act_settings_user_description
-import com.kubekbreha.watsonchatbot.R.id.act_settings_user_name
 import com.kubekbreha.watsonchatbot.glide.GlideApp
 import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.util.StorageUtil
@@ -24,15 +17,6 @@ import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.io.ByteArrayOutputStream
-import java.io.File
-import android.view.MotionEvent
-import android.graphics.drawable.ColorDrawable
-import android.graphics.Color.parseColor
-
-
-
-
-
 
 
 class SettingsActivity : AppCompatActivity(), View.OnClickListener {
@@ -51,6 +35,29 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
         act_settings_save.setOnClickListener(this)
         frag_login_btn_login.setOnClickListener(this)
 
+
+        this.act_settings_user_name.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {}
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                this@SettingsActivity.act_settings_user_credentials_username_limit
+                        .text = act_settings_user_name.text.length.toString()+"/25"
+
+            }
+        })
+
+        this.act_settings_user_description.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {}
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                this@SettingsActivity.act_settings_user_credentials_description_limit
+                        .text = act_settings_user_description.text.length.toString()+"/100"
+            }
+        })
 
     }
 

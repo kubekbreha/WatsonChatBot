@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="4dp"
             android:background="@color/transparent"
             android:text="Save"
             android:textAllCaps="false"
@@ -111,7 +111,7 @@
 
             <TextView
                 android:id="@+id/act_settings_user_credentials_username"
-                android:layout_width="match_parent"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/act_settings_user_credentials_text"
                 android:layout_marginBottom="8dp"
@@ -120,6 +120,22 @@
                 android:text="Username"
                 android:textColor="@color/gray"
                 android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/act_settings_user_credentials_username_limit"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/act_settings_user_credentials_text"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_alignParentEnd="true"
+                android:paddingStart="16dp"
+                android:text="0/25"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+
 
 
             <EditText
@@ -138,6 +154,7 @@
                 android:imeOptions="actionSend|flagNoEnterAction"
                 android:isScrollContainer="true"
                 android:maxLines="1"
+                android:maxLength="25"
                 android:paddingStart="12dp"
                 android:shadowColor="@color/colorWhite"
                 android:singleLine="true"
@@ -148,7 +165,7 @@
 
             <TextView
                 android:id="@+id/act_settings_user_credentials_description"
-                android:layout_width="match_parent"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/act_settings_user_name"
                 android:layout_marginBottom="8dp"
@@ -158,6 +175,20 @@
                 android:text="Description"
                 android:textColor="@color/gray"
                 android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/act_settings_user_credentials_description_limit"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/act_settings_user_name"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="16dp"
+                android:text="0/100"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/act_settings_user_description"
@@ -176,10 +207,11 @@
                 android:gravity="top|left"
                 android:imeOptions="actionSend|flagNoEnterAction"
                 android:isScrollContainer="true"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
+                android:maxLength="100"
                 android:paddingBottom="8dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="8dp"
                 android:shadowColor="@color/colorWhite"
                 android:textColor="@color/colorBlack"
                 android:textColorHint="@color/light_gray"
