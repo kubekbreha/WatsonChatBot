@@ -65,6 +65,9 @@ dependencies {
     //cropper
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
 
+    //circleview
+    implementation 'com.mikhaellopez:circularimageview:3.0.2'
+
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.21"
 
