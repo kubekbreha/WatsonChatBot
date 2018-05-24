@@ -123,11 +123,12 @@
 
             <TextView
                 android:id="@+id/act_settings_user_credentials_username_limit"
-                android:layout_width="72dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/act_settings_user_credentials_text"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="8dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginStart="8dp"
                 android:layout_alignParentEnd="true"
                 android:paddingStart="16dp"
@@ -178,9 +179,10 @@
 
             <TextView
                 android:id="@+id/act_settings_user_credentials_description_limit"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="24dp"
                 android:layout_below="@id/act_settings_user_name"
                 android:layout_marginBottom="8dp"
                 android:layout_marginStart="8dp"
