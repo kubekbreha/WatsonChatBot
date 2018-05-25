@@ -14,12 +14,19 @@ import com.kubekbreha.watsonchatbot.model.*
 import com.kubekbreha.watsonchatbot.recyclerview.item.PersonItem
 import com.kubekbreha.watsonchatbot.recyclerview.item.TextMessageItem
 import com.xwray.groupie.kotlinandroidextensions.Item
+import java.text.SimpleDateFormat
+import java.util.*
+import com.google.android.gms.tasks.Task
+import android.support.annotation.NonNull
+
+
 
 
 object FirestoreUtil {
 
     private var TAG: String = "FirestoreUtil"
 
+    private val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
 
     private val firestoreInstance: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
 
@@ -84,11 +91,18 @@ object FirestoreUtil {
                     }
 
 
+
+
+                    val dateFormat = SimpleDateFormat
+                            .getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
+
                     val items = mutableListOf<Item>()
                     querySnapshot!!.documents.forEach {
                         if (it.id != FirebaseAuth.getInstance().currentUser?.uid)
-                            items.add(PersonItem(it.toObject(User::class.java)!!, it.id , context))
+                            items.add(PersonItem(it.toObject(User::class.java)!!, it.id, context))
+
                     }
+
                     onListen(items)
                 }
     }
@@ -162,29 +176,23 @@ object FirestoreUtil {
                 .collection("messages")
                 .add(message)
 
-        val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
         firestoreInstance.collection("users").document(currentUserId)
                 .collection("engagedChatChannels")
                 .document(otherUserId)
                 .collection("lastMessage")
                 .document("lastMessage")
                 .set(message)
+
+        firestoreInstance.collection("users").document(otherUserId)
+                .collection("engagedChatChannels")
+                .document(currentUserId)
+                .collection("lastMessage")
+                .document("lastMessage")
+                .set(message)
+
+
+
+
     }
-
-
-//    fun getLastMessage(person: User){
-//        currentUserDocRef.get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { task ->
-//            if (task.isSuccessful) {
-//                val document = task.result
-//                if (document != null) {
-//                    Log.d(TAG, "DocumentSnapshot data: " + task.result.data!!)
-//                } else {
-//                    Log.d(TAG, "No such document")
-//                }
-//            } else {
-//                Log.d(TAG, "get failed with ", task.exception)
-//            }
-//        })
-//    }
 
 }

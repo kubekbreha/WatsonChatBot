@@ -3,8 +3,11 @@ package com.kubekbreha.watsonchatbot.recyclerview.item
 import com.kubekbreha.watsonchatbot.model.User
 import android.content.Context
 import android.os.Message
+import android.util.Log
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.glide.GlideApp
@@ -21,18 +24,47 @@ class PersonItem(
         val userId: String,
         private val contex: Context) : Item() {
 
+    private val TAG = "PERSON ITEM"
+    private val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         //set time
         val dateFormat = SimpleDateFormat
                 .getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
 
-        viewHolder.peoples_list_one_person_last_message_time.text = ""
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("users").document(userId)
+                .collection("engagedChatChannels")
+                .document(currentUserId)
+                .collection("lastMessage")
+                .document("lastMessage")
+
+        docRef.get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { task ->
+            if (task.isSuccessful) {
+                val document = task.result
+                if (document.exists()) {
+                    Log.d(TAG, "DocumentSnapshot data: " + document.data)
+
+                    val mess = document.toObject(TextMessage::class.java)!!
+                    Log.d(TAG, "DocumentSnapshot time: " + mess.time)
+                    Log.d(TAG, "DocumentSnapshot message: " + mess.text)
+
+                    viewHolder.peoples_list_one_person_last_message_time.text = dateFormat.format(mess.time)
+                    viewHolder.peoples_list_one_person_last_message.text = mess.text
+
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            } else {
+                Log.d(TAG, "get failed with ", task.exception)
+            }
+        })
+
+
+
 
 
         viewHolder.peoples_list_one_person_name.text = person.name
-        viewHolder.peoples_list_one_person_last_message.text = ""
-
 
         if(person.profilePicturePath != null) {
             viewHolder.peoples_list_one_person_name.text = person.name
