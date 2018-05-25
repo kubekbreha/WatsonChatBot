@@ -70,7 +70,12 @@ class PeoplesFragment : Fragment() {
             init()
         else
             updateItems()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        userListenerRegistration =
+                FirestoreUtil.addUsersListener(this.activity!!, this::updateRecyclerView)
     }
 
     private val onItemClick = OnItemClickListener { item, view ->
@@ -79,7 +84,6 @@ class PeoplesFragment : Fragment() {
             accountIntent.putExtra(AppConstants.USER_NAME, item.person.name)
             accountIntent.putExtra(AppConstants.USER_ID, item.userId)
             startActivity(accountIntent)
-
         }
     }
 

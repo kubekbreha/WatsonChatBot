@@ -28,7 +28,8 @@ class PersonItem(
     private val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
-        //set time
+
+        //last message and time of last message in peoples fragment
         val dateFormat = SimpleDateFormat
                 .getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
 
@@ -43,11 +44,8 @@ class PersonItem(
             if (task.isSuccessful) {
                 val document = task.result
                 if (document.exists()) {
-                    Log.d(TAG, "DocumentSnapshot data: " + document.data)
 
                     val mess = document.toObject(TextMessage::class.java)!!
-                    Log.d(TAG, "DocumentSnapshot time: " + mess.time)
-                    Log.d(TAG, "DocumentSnapshot message: " + mess.text)
 
                     viewHolder.peoples_list_one_person_last_message_time.text = dateFormat.format(mess.time)
                     viewHolder.peoples_list_one_person_last_message.text = mess.text
@@ -61,15 +59,12 @@ class PersonItem(
         })
 
 
-
-
-
         viewHolder.peoples_list_one_person_name.text = person.name
 
-        if(person.profilePicturePath != null) {
+        if (person.profilePicturePath != null) {
             viewHolder.peoples_list_one_person_name.text = person.name
             viewHolder.peoples_list_one_person_last_message.text = person.bio
-            if(person.profilePicturePath != null)
+            if (person.profilePicturePath != null)
                 GlideApp.with(contex)
                         .load(StorageUtil.pathToReference(person.profilePicturePath))
                         .placeholder(R.drawable.setup_profile)
@@ -78,7 +73,6 @@ class PersonItem(
     }
 
     override fun getLayout() = R.layout.item_one_person
-
 
 }
 
