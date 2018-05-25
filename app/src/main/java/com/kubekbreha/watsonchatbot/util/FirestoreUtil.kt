@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.kubekbreha.watsonchatbot.model.*
@@ -13,29 +15,33 @@ import com.kubekbreha.watsonchatbot.recyclerview.item.PersonItem
 import com.kubekbreha.watsonchatbot.recyclerview.item.TextMessageItem
 import com.xwray.groupie.kotlinandroidextensions.Item
 
-object FirestoreUtil{
+
+object FirestoreUtil {
+
+    private var TAG: String = "FirestoreUtil"
+
 
     private val firestoreInstance: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
 
     private val currentUserDocRef: DocumentReference
         get() = firestoreInstance.document("users/${FirebaseAuth.getInstance().currentUser?.uid
-                ?:  throw NullPointerException("UID is null.")}")
+                ?: throw NullPointerException("UID is null.")}")
 
 
     private val chatChannelsCollectionRef = firestoreInstance.collection("chatChannels")
 
 
-    fun initCurrentUserIfFirstTime(activity: Activity,name: String, onComplete: () -> Unit){
+    fun initCurrentUserIfFirstTime(activity: Activity, name: String, onComplete: () -> Unit) {
         currentUserDocRef.get().addOnSuccessListener { documentSnapshot ->
-            if(!documentSnapshot.exists()){
+            if (!documentSnapshot.exists()) {
                 val newUser = User(FirebaseAuth.getInstance().currentUser?.displayName ?: name,
                         "", null)
                 currentUserDocRef.set(newUser).addOnSuccessListener {
-//                    Toast.makeText(activity, "Data saved.",
+                    //                    Toast.makeText(activity, "Data saved.",
 //                            Toast.LENGTH_SHORT).show()
                     onComplete()
                 }
-            }else{
+            } else {
 //                Toast.makeText(activity, "Failed.",
 //                        Toast.LENGTH_SHORT).show()
                 onComplete()
@@ -46,15 +52,15 @@ object FirestoreUtil{
 
     fun updateCurrentUser(activity: Activity, name: String = "", bio: String = "", profilePicturePath: String? = null) {
         val userFieldMap = mutableMapOf<String, Any>()
-        if(name.isNotBlank()) userFieldMap["name"] = name
-        if(bio.isNotBlank()) userFieldMap["bio"] = bio
-        if(profilePicturePath != null)
+        if (name.isNotBlank()) userFieldMap["name"] = name
+        if (bio.isNotBlank()) userFieldMap["bio"] = bio
+        if (profilePicturePath != null)
             userFieldMap["profilePicturePath"] = profilePicturePath
 
         currentUserDocRef.update(userFieldMap).addOnSuccessListener {
             Toast.makeText(activity, "Data saved.",
                     Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener{
+        }.addOnFailureListener {
             Toast.makeText(activity, "Failed.",
                     Toast.LENGTH_SHORT).show()
         }
@@ -77,21 +83,24 @@ object FirestoreUtil{
                         return@addSnapshotListener
                     }
 
+
                     val items = mutableListOf<Item>()
                     querySnapshot!!.documents.forEach {
                         if (it.id != FirebaseAuth.getInstance().currentUser?.uid)
-                            items.add(PersonItem(it.toObject(User::class.java)!!, it.id, context))
+                            items.add(PersonItem(it.toObject(User::class.java)!!, it.id , context))
                     }
                     onListen(items)
                 }
     }
+
 
     fun removeListener(registration: ListenerRegistration) = registration.remove()
 
     fun getOrCreateChatChannel(otherUserId: String,
                                onComplete: (channelId: String) -> Unit) {
         currentUserDocRef.collection("engagedChatChannels")
-                .document(otherUserId).get().addOnSuccessListener {
+                .document(otherUserId).collection("chanelId")
+                .document("chanelId").get().addOnSuccessListener {
                     if (it.exists()) {
                         onComplete(it["channelId"] as String)
                         return@addOnSuccessListener
@@ -105,11 +114,15 @@ object FirestoreUtil{
                     currentUserDocRef
                             .collection("engagedChatChannels")
                             .document(otherUserId)
+                            .collection("chanelId")
+                            .document("chanelId")
                             .set(mapOf("channelId" to newChannel.id))
 
                     firestoreInstance.collection("users").document(otherUserId)
                             .collection("engagedChatChannels")
                             .document(currentUserId)
+                            .collection("chanelId")
+                            .document("chanelId")
                             .set(mapOf("channelId" to newChannel.id))
 
                     onComplete(newChannel.id)
@@ -118,13 +131,17 @@ object FirestoreUtil{
 
     fun addChatMessagesListener(channelId: String, context: Context,
                                 onListen: (List<Item>) -> Unit): ListenerRegistration {
+
         return chatChannelsCollectionRef.document(channelId).collection("messages")
+                .document("allMessages")
+                .collection("messages")
                 .orderBy("time")
                 .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     if (firebaseFirestoreException != null) {
                         Log.e("FIRESTORE", "ChatMessagesListener error.", firebaseFirestoreException)
                         return@addSnapshotListener
                     }
+
 
                     val items = mutableListOf<Item>()
                     querySnapshot!!.documents.forEach {
@@ -138,10 +155,36 @@ object FirestoreUtil{
     }
 
 
-    fun sendMessage(message: Message, channelId: String) {
+    fun sendMessage(message: Message, channelId: String, otherUserId: String) {
         chatChannelsCollectionRef.document(channelId)
                 .collection("messages")
+                .document("allMessages")
+                .collection("messages")
                 .add(message)
+
+        val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
+        firestoreInstance.collection("users").document(currentUserId)
+                .collection("engagedChatChannels")
+                .document(otherUserId)
+                .collection("lastMessage")
+                .document("lastMessage")
+                .set(message)
     }
+
+
+//    fun getLastMessage(person: User){
+//        currentUserDocRef.get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { task ->
+//            if (task.isSuccessful) {
+//                val document = task.result
+//                if (document != null) {
+//                    Log.d(TAG, "DocumentSnapshot data: " + task.result.data!!)
+//                } else {
+//                    Log.d(TAG, "No such document")
+//                }
+//            } else {
+//                Log.d(TAG, "get failed with ", task.exception)
+//            }
+//        })
+//    }
 
 }

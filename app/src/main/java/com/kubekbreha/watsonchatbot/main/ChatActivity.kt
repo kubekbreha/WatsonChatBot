@@ -42,11 +42,13 @@ class ChatActivity : AppCompatActivity(), View.OnClickListener {
                     FirestoreUtil.addChatMessagesListener(channelId, this, this::updateRecyclerView)
 
             act_chat_send_button.setOnClickListener {
+
                 val messageToSend =
                         TextMessage(act_chat_text_input.text.toString(), Calendar.getInstance().time,
                                 FirebaseAuth.getInstance().currentUser!!.uid, MessageType.TEXT)
+
                 act_chat_text_input.setText("")
-                FirestoreUtil.sendMessage(messageToSend, channelId)
+                FirestoreUtil.sendMessage(messageToSend, channelId, otherUserId)
             }
 
 //            act_chat_add_image.setOnClickListener {

@@ -50,6 +50,6 @@
         android:text="00:00"
         android:textColor="@color/colorBlack"
         android:textSize="14dp" />
-
+    
 
 </RelativeLayout>
