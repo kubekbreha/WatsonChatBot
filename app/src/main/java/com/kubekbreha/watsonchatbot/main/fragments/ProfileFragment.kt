@@ -20,7 +20,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
 import com.kubekbreha.watsonchatbot.authentication.SettingsActivity
+import com.kubekbreha.watsonchatbot.glide.GlideApp
 import com.kubekbreha.watsonchatbot.main.MainActivity
+import com.kubekbreha.watsonchatbot.util.FirestoreUtil
+import com.kubekbreha.watsonchatbot.util.StorageUtil
+import com.mikhaellopez.circularimageview.CircularImageView
+import kotlinx.android.synthetic.main.activity_settings.*
 import kotlin.math.log
 
 
@@ -29,6 +34,7 @@ class ProfileFragment : Fragment() {
     private var mAuth: FirebaseAuth? = null
     private var mGoogleApiClient: GoogleApiClient? = null
     private var btnSettings: ImageButton? = null
+    private var profileImage: CircularImageView? = null
 
     companion object {
         val TAG: String = ProfileFragment::class.java.simpleName
@@ -46,6 +52,8 @@ class ProfileFragment : Fragment() {
 
     private fun initialize(view: View) {
         btnSettings = view.findViewById<View>(R.id.frag_profile_settings_button) as ImageButton
+        profileImage = view.findViewById<View>(R.id.frag_profile_person_image) as CircularImageView
+
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -99,6 +107,7 @@ class ProfileFragment : Fragment() {
     }
 
 
+
     fun logOutUser() {
         mAuth!!.signOut()
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback { updateUI() }
@@ -111,6 +120,19 @@ class ProfileFragment : Fragment() {
         startActivity(accountIntent)
         activity!!.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         activity!!.finish()
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        FirestoreUtil.getCurrentUser { user ->
+            if ( user.profilePicturePath != null)
+                GlideApp.with(this)
+                        .load(StorageUtil.pathToReference(user.profilePicturePath))
+                        .placeholder(R.drawable.setup_profile)
+                        .into(profileImage!!)
+        }
+
     }
 
 }

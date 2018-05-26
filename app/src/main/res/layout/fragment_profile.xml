@@ -19,6 +19,18 @@
             android:layout_height="24dp"
             android:background="@color/dark_transparent" />
 
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/frag_profile_person_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_alignParentTop="true"
+            app:civ_border_width="0dp" />
+
+
         <ImageButton
             android:id="@+id/frag_profile_settings_button"
             android:layout_width="wrap_content"
