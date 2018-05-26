@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/registerBackground">
-
+    android:background="@color/registerBackground"
+    android:orientation="vertical">
 
 
     <RelativeLayout
-        android:layout_height="240dp"
         android:layout_width="match_parent"
+        android:layout_height="240dp"
         android:background="@color/colorPrimaryDark">
 
         <FrameLayout
@@ -24,28 +23,126 @@
             android:id="@+id/frag_profile_person_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="80dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/setup_profile"
             app:civ_border_width="0dp" />
+
+
+        <!--                       -->
+        <RelativeLayout
+            android:layout_width="56dp"
+            android:layout_height="24dp"
+            android:layout_alignStart="@+id/frog_profile_text1"
+            android:layout_marginTop="80dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold">
+
+            <TextView
+                android:id="@+id/frog_profile_text1_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                android:textColor="@color/lighter_gray"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/frog_profile_text1"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/frag_profile_person_image"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="104dp"
+            android:text="Not sure"
+            android:textColor="@color/light_gray"
+            android:textStyle="bold" />
+
+
+        <!--                       -->
+        <RelativeLayout
+            android:layout_width="56dp"
+            android:layout_height="24dp"
+            android:layout_alignStart="@+id/frog_profile_text2"
+            android:layout_marginTop="80dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold">
+
+            <TextView
+                android:id="@+id/frog_profile_text2_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                android:textColor="@color/lighter_gray"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/frog_profile_text2"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/frog_profile_text1"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="104dp"
+            android:text="Not sure"
+            android:textColor="@color/light_gray"
+            android:textStyle="bold" />
+
+
+
+        <!--                       -->
+        <RelativeLayout
+            android:layout_width="56dp"
+            android:layout_height="24dp"
+            android:layout_alignStart="@+id/frog_profile_text3"
+            android:layout_marginTop="80dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold">
+
+            <TextView
+                android:id="@+id/frog_profile_text3_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                android:textColor="@color/lighter_gray"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/frog_profile_text3"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/frog_profile_text2"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="104dp"
+            android:text="Not sure"
+            android:textColor="@color/light_gray"
+            android:textStyle="bold" />
 
 
         <ImageButton
             android:id="@+id/frag_profile_settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_more_vert"
-            android:background="@color/transparent"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/frag_profile_top_layout"
             android:layout_margin="8dp"
-            android:padding="4dp"/>
+            android:background="@color/transparent"
+            android:padding="4dp"
+            android:src="@drawable/ic_more_vert" />
 
     </RelativeLayout>
-
-
-
 
 
 </RelativeLayout>
