@@ -4,22 +4,14 @@ import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.kubekbreha.watsonchatbot.model.*
 import com.kubekbreha.watsonchatbot.recyclerview.item.PersonItem
 import com.kubekbreha.watsonchatbot.recyclerview.item.TextMessageItem
 import com.xwray.groupie.kotlinandroidextensions.Item
-import java.text.SimpleDateFormat
-import java.util.*
-import com.google.android.gms.tasks.Task
-import android.support.annotation.NonNull
-
-
 
 
 object FirestoreUtil {
@@ -141,8 +133,7 @@ object FirestoreUtil {
     fun addChatMessagesListener(channelId: String, context: Context,
                                 onListen: (List<Item>) -> Unit): ListenerRegistration {
 
-        return chatChannelsCollectionRef.document(channelId).collection("messages")
-                .document("allMessages")
+        return chatChannelsCollectionRef.document(channelId)
                 .collection("messages")
                 .orderBy("time")
                 .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
@@ -166,8 +157,6 @@ object FirestoreUtil {
 
     fun sendMessage(message: Message, channelId: String, otherUserId: String) {
         chatChannelsCollectionRef.document(channelId)
-                .collection("messages")
-                .document("allMessages")
                 .collection("messages")
                 .add(message)
 

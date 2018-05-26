@@ -22,7 +22,6 @@ import java.util.*
 
 class ChatActivity : AppCompatActivity(), View.OnClickListener {
 
-
     private var shouldInitRecyclerView = true
     private lateinit var messagesSection: Section
     private lateinit var messagesListenerRegistration: ListenerRegistration

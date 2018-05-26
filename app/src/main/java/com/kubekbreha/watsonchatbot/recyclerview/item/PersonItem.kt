@@ -42,7 +42,7 @@ class PersonItem(
                 .collection("lastMessage")
                 .document("lastMessage")
 
-        docRef.get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { task ->
+        docRef.get().addOnCompleteListener( { task ->
             if (task.isSuccessful) {
                 val document = task.result
                 if (document.exists()) {
