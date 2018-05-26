@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -35,6 +36,7 @@ class ProfileFragment : Fragment() {
     private var mGoogleApiClient: GoogleApiClient? = null
     private var btnSettings: ImageButton? = null
     private var profileImage: CircularImageView? = null
+    private var profileDescription: TextView? = null
 
     companion object {
         val TAG: String = ProfileFragment::class.java.simpleName
@@ -53,7 +55,7 @@ class ProfileFragment : Fragment() {
     private fun initialize(view: View) {
         btnSettings = view.findViewById<View>(R.id.frag_profile_settings_button) as ImageButton
         profileImage = view.findViewById<View>(R.id.frag_profile_person_image) as CircularImageView
-
+        profileDescription = view.findViewById<View>(R.id.frag_profile_user_description) as TextView
 
         mAuth = FirebaseAuth.getInstance()
 
