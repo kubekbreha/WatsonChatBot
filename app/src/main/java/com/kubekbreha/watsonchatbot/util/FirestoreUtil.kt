@@ -155,6 +155,7 @@ object FirestoreUtil {
     }
 
 
+    //TODO("Fix push last mesage on first app open")
     fun sendMessage(message: Message, channelId: String, otherUserId: String) {
         chatChannelsCollectionRef.document(channelId)
                 .collection("messages")

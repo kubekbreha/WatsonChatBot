@@ -30,10 +30,10 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_settings)
 
 
-        act_settings_btn_back_from_login.setOnClickListener(this)
+        act_settings_btn_back_from_settings.setOnClickListener(this)
         act_settings_profile_photo.setOnClickListener(this)
         act_settings_save.setOnClickListener(this)
-        frag_login_btn_login.setOnClickListener(this)
+        act_settings_btn_profile_photo.setOnClickListener(this)
 
 
         this.act_settings_user_name.addTextChangedListener(object : TextWatcher {
@@ -63,7 +63,7 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.act_settings_btn_back_from_login -> {
+            R.id.act_settings_btn_back_from_settings -> {
                 onBackPressed()
             }
 
@@ -74,7 +74,7 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
                 startActivityForResult(galleryIntent, GALLERY_REQUEST)
             }
 
-            R.id.frag_login_btn_login -> {
+            R.id.act_settings_btn_profile_photo -> {
                 val galleryIntent = Intent()
                 galleryIntent.action = Intent.ACTION_GET_CONTENT
                 galleryIntent.type = "image/*"
