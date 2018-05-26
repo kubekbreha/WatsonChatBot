@@ -1,10 +1,8 @@
-package com.example.bottomnavigation.ui
+package com.kubekbreha.watsonchatbot.main.fragments
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
 import android.support.v7.widget.PopupMenu
 import android.util.Log
 import android.view.Gravity
@@ -22,12 +20,9 @@ import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.authentication.AuthenticationActivity
 import com.kubekbreha.watsonchatbot.authentication.SettingsActivity
 import com.kubekbreha.watsonchatbot.glide.GlideApp
-import com.kubekbreha.watsonchatbot.main.MainActivity
 import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.util.StorageUtil
 import com.mikhaellopez.circularimageview.CircularImageView
-import kotlinx.android.synthetic.main.activity_settings.*
-import kotlin.math.log
 
 
 class ProfileFragment : Fragment() {
@@ -36,7 +31,7 @@ class ProfileFragment : Fragment() {
     private var mGoogleApiClient: GoogleApiClient? = null
     private var btnSettings: ImageButton? = null
     private var profileImage: CircularImageView? = null
-    private var profileDescription: TextView? = null
+    private var profileBio: TextView? = null
 
     companion object {
         val TAG: String = ProfileFragment::class.java.simpleName
@@ -55,7 +50,7 @@ class ProfileFragment : Fragment() {
     private fun initialize(view: View) {
         btnSettings = view.findViewById<View>(R.id.frag_profile_settings_button) as ImageButton
         profileImage = view.findViewById<View>(R.id.frag_profile_person_image) as CircularImageView
-        profileDescription = view.findViewById<View>(R.id.frag_profile_user_description) as TextView
+        profileBio = view.findViewById<View>(R.id.frag_profile_user_bio) as TextView
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -128,6 +123,7 @@ class ProfileFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         FirestoreUtil.getCurrentUser { user ->
+            profileBio!!.text = user.bio
             if ( user.profilePicturePath != null)
                 GlideApp.with(this)
                         .load(StorageUtil.pathToReference(user.profilePicturePath))

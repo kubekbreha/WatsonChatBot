@@ -1,4 +1,4 @@
-package com.example.bottomnavigation.ui
+package com.kubekbreha.watsonchatbot.main.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

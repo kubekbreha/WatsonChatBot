@@ -30,6 +30,7 @@ class SettingsActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_settings)
 
 
+
         act_settings_btn_back_from_settings.setOnClickListener(this)
         act_settings_profile_photo.setOnClickListener(this)
         act_settings_save.setOnClickListener(this)
