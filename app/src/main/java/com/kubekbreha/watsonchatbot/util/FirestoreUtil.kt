@@ -90,12 +90,6 @@ object FirestoreUtil {
                         return@addSnapshotListener
                     }
 
-
-
-
-                    val dateFormat = SimpleDateFormat
-                            .getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
-
                     val items = mutableListOf<Item>()
                     querySnapshot!!.documents.forEach {
                         if (it.id != FirebaseAuth.getInstance().currentUser?.uid)
@@ -189,10 +183,6 @@ object FirestoreUtil {
                 .collection("lastMessage")
                 .document("lastMessage")
                 .set(message)
-
-
-
-
     }
 
 }

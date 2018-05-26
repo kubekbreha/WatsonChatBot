@@ -3,21 +3,23 @@ package com.kubekbreha.watsonchatbot.recyclerview.item
 import com.kubekbreha.watsonchatbot.model.User
 import android.content.Context
 import android.os.Message
+import android.text.format.DateUtils
 import android.util.Log
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.kubekbreha.watsonchatbot.R
 import com.kubekbreha.watsonchatbot.glide.GlideApp
 import com.kubekbreha.watsonchatbot.model.TextMessage
-import com.kubekbreha.watsonchatbot.util.FirestoreUtil
 import com.kubekbreha.watsonchatbot.util.StorageUtil
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.item_one_person.*
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class PersonItem(
         val person: User,
@@ -30,8 +32,8 @@ class PersonItem(
     override fun bind(viewHolder: ViewHolder, position: Int) {
 
         //last message and time of last message in peoples fragment
-        val dateFormat = SimpleDateFormat
-                .getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
+        val dateFormatTime = SimpleDateFormat("HH:mm")
+        val dateFormatDate = SimpleDateFormat("d MMM")
 
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("users").document(userId)
@@ -47,8 +49,13 @@ class PersonItem(
 
                     val mess = document.toObject(TextMessage::class.java)!!
 
-                    viewHolder.peoples_list_one_person_last_message_time.text = dateFormat.format(mess.time)
+                    if(dateFormatDate.format(mess.time) != dateFormatDate.format( Date())) 
+                        viewHolder.peoples_list_one_person_last_message_time.text = dateFormatDate.format(mess.time)
+                    else
+                        viewHolder.peoples_list_one_person_last_message_time.text = dateFormatTime.format(mess.time)
+
                     viewHolder.peoples_list_one_person_last_message.text = mess.text
+
 
                 } else {
                     Log.d(TAG, "No such document")
