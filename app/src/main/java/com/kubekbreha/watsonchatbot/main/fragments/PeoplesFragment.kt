@@ -30,6 +30,8 @@ class PeoplesFragment : Fragment() {
 
     private lateinit var peopleSection: Section
 
+    private var paused: Boolean = false
+
     companion object {
         val TAG: String = PeoplesFragment::class.java.simpleName
         fun newInstance() = PeoplesFragment()
@@ -48,12 +50,14 @@ class PeoplesFragment : Fragment() {
         super.onDestroyView()
         FirestoreUtil.removeListener(userListenerRegistration)
         shouldInitRecyclerView = true
+        paused = true
     }
+
 
     private fun updateRecyclerView(items: List<Item>) {
 
         fun init() {
-            frag_peoples_recycler_view.apply {
+            this@PeoplesFragment.frag_peoples_recycler_view.apply {
                 layoutManager = LinearLayoutManager(this@PeoplesFragment.context)
                 adapter = GroupAdapter<ViewHolder>().apply {
                     peopleSection = Section(items)
@@ -74,8 +78,16 @@ class PeoplesFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        userListenerRegistration =
-                FirestoreUtil.addUsersListener(this.activity!!, this::updateRecyclerView)
+        if(paused) {
+            userListenerRegistration =
+                    FirestoreUtil.addUsersListener(this.activity!!, this::updateRecyclerView)
+            paused = false
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        paused = true
     }
 
     private val onItemClick = OnItemClickListener { item, view ->

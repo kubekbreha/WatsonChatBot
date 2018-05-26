@@ -49,7 +49,7 @@ class PersonItem(
 
                     val mess = document.toObject(TextMessage::class.java)!!
 
-                    if(dateFormatDate.format(mess.time) != dateFormatDate.format( Date())) 
+                    if(dateFormatDate.format(mess.time) != dateFormatDate.format( Date()))
                         viewHolder.peoples_list_one_person_last_message_time.text = dateFormatDate.format(mess.time)
                     else
                         viewHolder.peoples_list_one_person_last_message_time.text = dateFormatTime.format(mess.time)

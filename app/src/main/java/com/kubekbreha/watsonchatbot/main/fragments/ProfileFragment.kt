@@ -103,6 +103,7 @@ class ProfileFragment : Fragment() {
     fun logOutUser() {
         mAuth!!.signOut()
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback { updateUI() }
+        this.onDestroy()
     }
 
 

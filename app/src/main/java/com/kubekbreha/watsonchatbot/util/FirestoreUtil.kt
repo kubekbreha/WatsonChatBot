@@ -84,6 +84,7 @@ object FirestoreUtil {
 
     fun addUsersListener(context: Context, onListen: (List<Item>) -> Unit): ListenerRegistration {
         return firestoreInstance.collection("users")
+                //.orderBy("engagedChatChannels/lastMessage/lastMessage/time")
                 .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     if (firebaseFirestoreException != null) {
                         Log.e("FIRESTORE", "Users listener error.", firebaseFirestoreException)
