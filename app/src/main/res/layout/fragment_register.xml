@@ -150,8 +150,7 @@
             android:clickable="true"
             android:drawableStart="@drawable/fb_logo_xml"
             android:elevation="0dp"
-            android:focusable="true"
-            android:paddingStart="7dp" />
+            android:focusable="true" />
 
         <Button
             android:id="@+id/frag_register_register_button_google"
