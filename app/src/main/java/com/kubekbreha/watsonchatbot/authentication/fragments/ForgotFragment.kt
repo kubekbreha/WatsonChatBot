@@ -1,6 +1,7 @@
 package com.kubekbreha.watsonchatbot.authentication.fragments
 
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -26,6 +27,7 @@ class ForgotFragment : Fragment(), View.OnClickListener {
     private var etEmail: EditText? = null
     private var btnSubmit: Button? = null
     private var btnBack: ImageButton? = null
+    private var mProgressBar: ProgressDialog? = null
 
     //Firebase references
     private var mAuth: FirebaseAuth? = null
@@ -44,6 +46,7 @@ class ForgotFragment : Fragment(), View.OnClickListener {
         btnSubmit = view.findViewById<View>(R.id.frag_forgot_btn_submit) as Button
         btnBack = view.findViewById<View>(R.id.frag_forgot_btn_back_from_forgot) as ImageButton
         mAuth = FirebaseAuth.getInstance()
+        mProgressBar = ProgressDialog(activity)
 
         btnSubmit!!.setOnClickListener(this)
         btnBack!!.setOnClickListener(this)
@@ -64,6 +67,8 @@ class ForgotFragment : Fragment(), View.OnClickListener {
     }
 
     private fun sendPasswordResetEmail() {
+        mProgressBar!!.setMessage("Sending email...")
+        mProgressBar!!.show()
         val email = etEmail?.text.toString()
         if (!TextUtils.isEmpty(email)) {
             mAuth!!
@@ -73,9 +78,11 @@ class ForgotFragment : Fragment(), View.OnClickListener {
                             val message = "Email sent."
                             Log.d(TAG, message)
                             Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
+                            mProgressBar!!.hide()
                             updateUI()
                         } else {
                             Log.w(TAG, task.exception!!.message)
+                            mProgressBar!!.hide()
                             Toast.makeText(activity, "No user found with this email.", Toast.LENGTH_SHORT).show()
                         }
                     }
