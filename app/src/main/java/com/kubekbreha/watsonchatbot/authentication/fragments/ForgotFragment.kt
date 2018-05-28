@@ -79,7 +79,16 @@ class ForgotFragment : Fragment(), View.OnClickListener {
                             Log.d(TAG, message)
                             Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
                             mProgressBar!!.hide()
-                            updateUI()
+                            val newFragment = AuthenticationFragment()
+                            val transaction = fragmentManager!!.beginTransaction()
+
+                            val fm = activity!!.supportFragmentManager
+                            for (i in 0 until fm.backStackEntryCount) {
+                                fm.popBackStack()
+                            }
+
+                            transaction.replace(R.id.act_authentication_authentication_frame, newFragment)
+                            transaction.commit()
                         } else {
                             Log.w(TAG, task.exception!!.message)
                             mProgressBar!!.hide()
@@ -90,12 +99,5 @@ class ForgotFragment : Fragment(), View.OnClickListener {
             Toast.makeText(activity, "Enter Email", Toast.LENGTH_SHORT).show()
         }
     }
-
-
-    private fun updateUI() {
-        val intent = Intent(activity, AuthenticationActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
-    }
-
+    
 }
