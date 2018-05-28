@@ -151,18 +151,19 @@
             android:drawableStart="@drawable/fb_logo_xml"
             android:elevation="0dp"
             android:focusable="true"
-            android:paddingStart="6dp" />
+            android:paddingStart="7dp" />
 
         <Button
             android:id="@+id/frag_register_register_button_google"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/button_background_google"
+            android:background="@drawable/button_rounded_white"
             android:clickable="true"
-            android:drawableStart="@drawable/google_logo_xml"
+            android:drawableStart="@drawable/google_logo_color_xml_big"
             android:focusable="true"
-            android:paddingStart="10dp" />
+            android:paddingStart="15dp"
+            android:paddingTop="1dp"/>
 
 
     </RelativeLayout>
