@@ -1,6 +1,7 @@
 package com.kubekbreha.watsonchatbot.authentication.fragments
 
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -29,6 +30,8 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
     private var btnLogIn: Button? = null
     private var btnSignUp: Button? = null
     private var btnGoogle: Button? = null
+    private var mProgressBar: ProgressDialog? = null
+
 
     private var mAuth: FirebaseAuth? = null
 
@@ -69,6 +72,8 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
         btnLogIn!!.setOnClickListener(this)
         btnSignUp!!.setOnClickListener(this)
         btnGoogle!!.setOnClickListener ( this )
+        mProgressBar = ProgressDialog(activity!!)
+
 
     }
 
@@ -130,6 +135,8 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
 
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        mProgressBar!!.setMessage("Singing user...")
+        mProgressBar!!.show()
         Log.i(TAG, "Authenticating user with firebase.")
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         mAuth?.signInWithCredential(credential)?.addOnCompleteListener(this!!.activity!!) { task ->
@@ -138,6 +145,7 @@ class AuthenticationFragment : Fragment(), View.OnClickListener {
                 // Sign in success, update UI with the signed-in user's information
                 FirestoreUtil.initCurrentUserIfFirstTime(activity!!, "") {
                     startActivity(Intent(activity, MainActivity::class.java))
+                    mProgressBar!!.hide()
                     activity!!.finish()
                 }
 

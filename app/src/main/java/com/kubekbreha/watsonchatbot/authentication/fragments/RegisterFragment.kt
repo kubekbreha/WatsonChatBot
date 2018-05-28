@@ -46,6 +46,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
     private var btnGoogle: Button? = null
     private var btnFacebook: Button? = null
 
+
     //Firebase references
     private var mDatabaseReference: DatabaseReference? = null
     private var mDatabase: FirebaseDatabase? = null
@@ -231,6 +232,8 @@ class RegisterFragment : Fragment(), View.OnClickListener {
 
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        mProgressBar!!.setMessage("Registering User...")
+        mProgressBar!!.show()
         Log.i(TAG, "Authenticating user with firebase.")
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         mAuth?.signInWithCredential(credential)?.addOnCompleteListener(this!!.activity!!) { task ->
@@ -240,6 +243,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
                 FirestoreUtil.initCurrentUserIfFirstTime(activity!!, "") {
                     startActivity(Intent(activity, MainActivity::class.java))
                     activity!!.finish()
+                    mProgressBar!!.hide()
                 }
             } else {
                 // If sign in fails, display a message to the user.
