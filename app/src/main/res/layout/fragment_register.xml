@@ -141,7 +141,7 @@
         android:layout_marginTop="16dp">
 
         <Button
-            android:id="@+id/frag_register_register_button_facebook"
+            android:id="@+id/frag_register_register_button_twitter"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_alignParentStart="true"
@@ -167,15 +167,6 @@
 
 
     </RelativeLayout>
-
-    <com.facebook.login.widget.LoginButton
-        android:layout_below="@+id/frag_register_social_buttons"
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />
 
 
 </RelativeLayout>

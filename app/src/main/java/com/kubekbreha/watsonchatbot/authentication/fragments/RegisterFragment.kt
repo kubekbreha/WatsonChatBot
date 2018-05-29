@@ -55,37 +55,20 @@ class RegisterFragment : Fragment(), View.OnClickListener {
     private var mProgressBar: ProgressDialog? = null
     private var btnBack: ImageButton? = null
     private var btnGoogle: Button? = null
-    private var btnFacebook: Button? = null
-    //private var btnTwitter: Button? = null
-    lateinit var facebookSignInButton: LoginButton
-    var callbackManager: CallbackManager? = null
-
-
-    private var mFacebookCallbackManager: CallbackManager? = null // for facebook log in
 
     //Firebase references
     private var mDatabaseReference: DatabaseReference? = null
     private var mDatabase: FirebaseDatabase? = null
     private var mAuth: FirebaseAuth? = null
 
-
     //Request codes
     val GOOGLE_LOG_IN_RC = 1
-    val FACEBOOK_LOG_IN_RC = 2
-    val TWITTER_LOG_IN_RC = 3
-    private val FACEBOOK_LOG_IN_REQUEST_CODE = 64206
-
 
     // Google API Client object.
     var googleApiClient: GoogleApiClient? = null
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-
-        FacebookSdk.sdkInitialize(activity!!.getApplicationContext())
-        mFacebookCallbackManager = CallbackManager.Factory.create()
-
 
         val view = inflater.inflate(R.layout.fragment_register, container, false)
         initialise(view)
@@ -113,9 +96,6 @@ class RegisterFragment : Fragment(), View.OnClickListener {
         btnCreateAccount = view.findViewById<View>(R.id.frag_register_btn_register) as Button
         btnBack = view.findViewById<View>(R.id.frag_register_btn_back_from_register) as ImageButton
         btnGoogle = view.findViewById<View>(R.id.frag_register_register_button_google) as Button
-        btnFacebook = view.findViewById<View>(R.id.frag_register_register_button_facebook) as Button
-        //btnTwitter = view.findViewById<View>(R.id.frag_register_register_button_twitter) as Button
-        facebookSignInButton = view.findViewById<View>(R.id.login_button) as LoginButton
 
         mProgressBar = ProgressDialog(activity)
         mDatabase = FirebaseDatabase.getInstance()
@@ -125,30 +105,6 @@ class RegisterFragment : Fragment(), View.OnClickListener {
         btnBack!!.setOnClickListener(this)
         //google login
         btnGoogle!!.setOnClickListener(this)
-        btnFacebook!!.setOnClickListener(this)
-
-
-        //facevbook
-
-        callbackManager = CallbackManager.Factory.create()
-        facebookSignInButton.setReadPermissions("email")
-// Callback registration
-        facebookSignInButton.setReadPermissions()
-
-        facebookSignInButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-            override fun onSuccess(loginResult: LoginResult) {
-                // App code
-                handleFacebookAccessToken(loginResult.accessToken);
-            }
-
-            override fun onCancel() {
-                // App code
-            }
-
-            override fun onError(exception: FacebookException) {
-                // App code
-            }
-        })
 
     }
 
@@ -166,9 +122,6 @@ class RegisterFragment : Fragment(), View.OnClickListener {
             R.id.frag_register_register_button_google -> {
                 Log.i(TAG, "Trying to login via google.")
                 googleLogin()
-            }
-
-            R.id.frag_register_register_button_facebook -> {
             }
 
 //            R.id.twitter_sign_in_button -> {
@@ -278,28 +231,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
             } else {
                 Toast.makeText(activity, "Some error occurred.", Toast.LENGTH_SHORT).show()
             }
-        } else if (requestCode == FACEBOOK_LOG_IN_REQUEST_CODE)
-            callbackManager!!.onActivityResult(requestCode, resultCode, data)
-    }
-
-
-    private fun handleFacebookAccessToken(token: AccessToken) {
-        Log.d(TAG, "handleFacebookAccessToken:" + token)
-        val credential = FacebookAuthProvider.getCredential(token.token)
-        mAuth!!.signInWithCredential(credential)
-                .addOnCompleteListener(activity!!) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "signInWithCredential:success")
-                        val user = mAuth!!.currentUser
-                        startActivity(Intent(activity, MainActivity::class.java))
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w(TAG, "signInWithCredential:failure", task.getException())
-                        Toast.makeText(activity, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show()
-                    }
-                }
+        }
     }
 
 
