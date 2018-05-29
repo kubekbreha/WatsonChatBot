@@ -99,5 +99,4 @@ class ForgotFragment : Fragment(), View.OnClickListener {
             Toast.makeText(activity, "Enter Email", Toast.LENGTH_SHORT).show()
         }
     }
-    
 }
