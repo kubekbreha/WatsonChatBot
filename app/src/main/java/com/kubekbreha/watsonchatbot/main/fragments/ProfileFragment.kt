@@ -65,7 +65,7 @@ class ProfileFragment : Fragment() {
         mGoogleApiClient!!.connect()
 
         btnSettings!!.setOnClickListener {
-        val popupMenu = PopupMenu(activity!!, it, Gravity.RIGHT)
+        val popupMenu = PopupMenu(activity!!, it, Gravity.END)
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.settings -> {
